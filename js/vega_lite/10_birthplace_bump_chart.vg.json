@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Bump chart: rank of the ten most common overseas countries of birth at each Census year, 1901 to 2021. Countries that leave the top ten drop off the bottom of the chart.",
+  "description": "Bump chart: rank of the ten most common overseas countries of birth at each Census year, 1901 to 2021. When a country leaves the top ten its line drops into a labelled 'Outside top 10' band.",
   "width": "container",
   "height": 400,
   "data": {
@@ -8,7 +8,16 @@
     "format": {"type": "csv", "parse": {"year": "number", "population": "number", "rank": "number"}}
   },
   "transform": [
-    {"impute": "rank", "key": "year", "groupby": ["country"], "value": 12},
+    {"impute": "rank", "key": "year", "groupby": ["country"], "value": 99},
+    {
+      "window": [{"op": "lag", "field": "rank", "as": "prevRank"}, {"op": "lead", "field": "rank", "as": "nextRank"}],
+      "groupby": ["country"],
+      "sort": [{"field": "year"}]
+    },
+    {
+      "calculate": "datum.rank <= 10 ? datum.rank : ((isValid(datum.prevRank) && datum.prevRank <= 10) || (isValid(datum.nextRank) && datum.nextRank <= 10) ? 11.3 : null)",
+      "as": "plotRank"
+    },
     {
       "calculate": "indexof(['United Kingdom', 'Ireland', 'Italy', 'Greece', 'China', 'India'], datum.country) >= 0 ? datum.country : 'Other countries'",
       "as": "group"
@@ -30,10 +39,10 @@
       }
     },
     "y": {
-      "field": "rank",
+      "field": "plotRank",
       "type": "quantitative",
-      "title": "Rank",
-      "scale": {"domain": [10.5, 0.5], "nice": false, "zero": false},
+      "title": "Rank (1 = most common)",
+      "scale": {"domain": [11.9, 0.5], "nice": false, "zero": false},
       "axis": {
         "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         "grid": false,
@@ -42,7 +51,8 @@
         "titleAngle": 0,
         "titleAlign": "right",
         "titleY": -12,
-        "titleX": 6
+        "titleX": -60,
+        "labels": false
       }
     },
     "color": {
@@ -58,7 +68,43 @@
   },
   "layer": [
     {
-      "mark": {"type": "line", "strokeWidth": 3, "clip": true, "interpolate": "monotone", "strokeCap": "round"},
+      "data": {"values": [{"y": 10.65, "y2": 11.9}]},
+      "mark": {"type": "rect", "color": "#efe9df"},
+      "encoding": {
+        "x": {"value": 0},
+        "x2": {"value": {"expr": "width"}},
+        "y": {"field": "y", "type": "quantitative"},
+        "y2": {"field": "y2"},
+        "opacity": {"value": 1},
+        "color": {"value": "#efe9df"}
+      }
+    },
+    {
+      "data": {"values": [{"y": 11.3, "label": "Outside top 10"}]},
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "fontSize": 12,
+        "fontStyle": "italic",
+        "dx": -10
+      },
+      "encoding": {
+        "x": {"value": 0},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"field": "label"},
+        "color": {"value": "#6e7783"},
+        "opacity": {"value": 1}
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "interpolate": "monotone",
+        "strokeCap": "round",
+        "invalid": "break-paths-filter-domains"
+      },
       "encoding": {
         "detail": {"field": "country"},
         "order": {"field": "year"},
