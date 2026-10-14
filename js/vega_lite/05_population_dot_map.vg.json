@@ -14,7 +14,7 @@
         "url": "data/population_dots_2021.csv",
         "format": {"type": "csv", "parse": {"lon": "number", "lat": "number"}}
       },
-      "mark": {"type": "circle", "size": 3.2, "color": "#1f3a5f", "opacity": 0.55},
+      "mark": {"type": "circle", "size": 4, "color": "#1f3a5f", "opacity": 0.3},
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"}
@@ -30,7 +30,7 @@
           {"name": "Adelaide", "lon": 138.6, "lat": -34.93, "lx": 136.6, "ly": -36.6, "align": "right"},
           {"name": "Hobart", "lon": 147.33, "lat": -42.88, "lx": 149.2, "ly": -43.3, "align": "left"},
           {"name": "Darwin", "lon": 130.84, "lat": -12.46, "lx": 129.3, "ly": -11.4, "align": "right"},
-          {"name": "Canberra", "lon": 149.13, "lat": -35.28, "lx": 147.2, "ly": -36.9, "align": "right"},
+          {"name": "Canberra", "lon": 149.13, "lat": -35.28, "lx": 152.3, "ly": -37.2, "align": "left"},
           {"name": "Alice Springs", "lon": 133.88, "lat": -23.7, "lx": 133.88, "ly": -22.3, "align": "center"}
         ]
       },
@@ -83,6 +83,35 @@
     },
     {
       "data": {"values": [{"lon": 124.5, "lat": -24.0, "text": ["Vast inland areas", "have few or no dots"]}]},
+      "mark": {
+        "type": "text",
+        "fontSize": 12.5,
+        "fontStyle": "italic",
+        "color": "#4a5563",
+        "align": "center",
+        "lineHeight": 16
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "text"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 149.2,
+            "lat": -13.2,
+            "text": [
+              "Dots are see-through, so they",
+              "darken where they pile up:",
+              "the darker the patch, the",
+              "more people live there"
+            ]
+          }
+        ]
+      },
       "mark": {
         "type": "text",
         "fontSize": 12.5,
