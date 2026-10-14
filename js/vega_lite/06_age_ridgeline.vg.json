@@ -1,0 +1,147 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Ridgeline plot: share of the population in each five-year age group at every Census year from 1911 to 2021. Each ridge is one Census.",
+  "data": {
+    "url": "data/age_structure.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "age_order": "number",
+        "male": "number",
+        "female": "number",
+        "male_pct": "number",
+        "female_pct": "number",
+        "pct": "number"
+      }
+    }
+  },
+  "facet": {
+    "row": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "header": {
+        "labelAngle": 0,
+        "labelAlign": "right",
+        "labelPadding": 6,
+        "labelFontSize": 12,
+        "labelColor": "#4a5563",
+        "labelBaseline": "bottom"
+      }
+    }
+  },
+  "spacing": 0,
+  "bounds": "flush",
+  "spec": {
+    "width": 400,
+    "height": 24,
+    "encoding": {
+      "x": {
+        "field": "age_order",
+        "type": "quantitative",
+        "scale": {"domain": [0, 17], "nice": false},
+        "title": "Age (years)",
+        "axis": {
+          "values": [0, 2, 4, 6, 8, 10, 12, 14, 16],
+          "labelExpr": "datum.value * 5",
+          "grid": false,
+          "domain": false,
+          "tickSize": 4
+        }
+      },
+      "y": {"field": "pct", "type": "quantitative", "scale": {"domain": [0, 11], "range": [24, -14]}, "axis": null}
+    },
+    "layer": [
+      {
+        "params": [
+          {
+            "name": "ridgeHover",
+            "select": {"type": "point", "fields": ["year"], "on": "pointerover", "clear": "pointerout"}
+          }
+        ],
+        "mark": {
+          "type": "area",
+          "interpolate": "monotone",
+          "stroke": "#fbf8f3",
+          "strokeWidth": 1.2,
+          "fillOpacity": 0.9
+        },
+        "encoding": {
+          "fill": {"condition": {"param": "ridgeHover", "empty": false, "value": "#d2553a"}, "value": "#2a78d6"}
+        }
+      },
+      {
+        "mark": {"type": "point", "opacity": 0, "size": 120},
+        "encoding": {
+          "tooltip": [
+            {"field": "year", "type": "ordinal", "title": "Year"},
+            {"field": "age_group", "type": "nominal", "title": "Age group"},
+            {"field": "pct", "type": "quantitative", "title": "Share of population (%)", "format": ".1f"}
+          ]
+        }
+      },
+      {
+        "transform": [{"filter": "datum.year == 1961 && datum.age_order == 11"}],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": 0,
+          "dy": -6,
+          "fontSize": 12,
+          "fontWeight": 700,
+          "color": "#fbf8f3",
+          "text": "← 1961: 30% of people under 15",
+          "stroke": "#fbf8f3",
+          "strokeWidth": 4,
+          "strokeOpacity": 0.95,
+          "strokeJoin": "round"
+        }
+      },
+      {
+        "transform": [{"filter": "datum.year == 1961 && datum.age_order == 11"}],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": 0,
+          "dy": -6,
+          "fontSize": 12,
+          "fontWeight": 700,
+          "color": "#b13f27",
+          "text": "← 1961: 30% of people under 15"
+        }
+      },
+      {
+        "transform": [{"filter": "datum.year == 2021 && datum.age_order == 17"}],
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx": 0,
+          "dy": -28,
+          "fontSize": 12,
+          "fontWeight": 700,
+          "color": "#fbf8f3",
+          "text": "Boomers now aged 55–75",
+          "stroke": "#fbf8f3",
+          "strokeWidth": 4,
+          "strokeOpacity": 0.95,
+          "strokeJoin": "round"
+        }
+      },
+      {
+        "transform": [{"filter": "datum.year == 2021 && datum.age_order == 17"}],
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx": 0,
+          "dy": -28,
+          "fontSize": 12,
+          "fontWeight": 700,
+          "color": "#b13f27",
+          "text": "Boomers now aged 55–75"
+        }
+      }
+    ]
+  },
+  "resolve": {"scale": {"y": "shared"}}
+}

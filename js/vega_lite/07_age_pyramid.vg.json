@@ -1,0 +1,150 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Interactive population pyramid: share of the population by age group and sex for a chosen Census year, with the 1911 pyramid as a dashed outline for comparison.",
+  "width": 400,
+  "height": 430,
+  "data": {
+    "url": "data/age_structure.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "age_order": "number",
+        "male": "number",
+        "female": "number",
+        "male_pct": "number",
+        "female_pct": "number",
+        "pct": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "pyramidYear",
+      "value": 2021,
+      "bind": {"input": "range", "min": 1911, "max": 2021, "step": 1, "name": "Census year "}
+    }
+  ],
+  "transform": [
+    {"filter": "datum.year <= pyramidYear"},
+    {"joinaggregate": [{"op": "max", "field": "year", "as": "shownYear"}]},
+    {"filter": "datum.year == datum.shownYear || datum.year == 1911"},
+    {"fold": ["male_pct", "female_pct"], "as": ["sexKey", "pct"]},
+    {"calculate": "datum.sexKey == 'male_pct' ? 'Men' : 'Women'", "as": "sex"},
+    {"calculate": "datum.sex == 'Men' ? -datum.pct : datum.pct", "as": "signedPct"}
+  ],
+  "encoding": {
+    "y": {
+      "field": "age_group",
+      "type": "ordinal",
+      "sort": [
+        "85+",
+        "80-84",
+        "75-79",
+        "70-74",
+        "65-69",
+        "60-64",
+        "55-59",
+        "50-54",
+        "45-49",
+        "40-44",
+        "35-39",
+        "30-34",
+        "25-29",
+        "20-24",
+        "15-19",
+        "10-14",
+        "5-9",
+        "0-4"
+      ],
+      "title": null,
+      "axis": {"domain": false, "ticks": false, "labelPadding": 6}
+    },
+    "x": {
+      "field": "signedPct",
+      "type": "quantitative",
+      "scale": {"domain": [-6.5, 6.5]},
+      "title": "Share of the total population",
+      "axis": {
+        "values": [-6, -4, -2, 0, 2, 4, 6],
+        "labelExpr": "abs(datum.value) + '%'",
+        "domain": false,
+        "tickSize": 0
+      }
+    }
+  },
+  "layer": [
+    {
+      "transform": [{"filter": "datum.year == datum.shownYear"}],
+      "mark": {"type": "bar", "height": {"band": 0.84}, "cornerRadius": 1},
+      "encoding": {
+        "color": {
+          "field": "sex",
+          "type": "nominal",
+          "scale": {"domain": ["Men", "Women"], "range": ["#2a78d6", "#d2553a"]},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+          {"field": "sex", "type": "nominal", "title": "Sex"},
+          {"field": "age_group", "type": "nominal", "title": "Age group"},
+          {"field": "pct", "type": "quantitative", "title": "Share of population (%)", "format": ".2f"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.year == 1911"}],
+      "mark": {
+        "type": "bar",
+        "height": {"band": 0.84},
+        "filled": false,
+        "stroke": "#1f2933",
+        "strokeWidth": 1,
+        "strokeDash": [3, 2],
+        "opacity": 0.75
+      },
+      "encoding": {"detail": {"field": "sex"}}
+    },
+    {
+      "data": {
+        "values": [{"x": -6.3, "label": "Men", "align": "left"}, {"x": 6.3, "label": "Women", "align": "right"}]
+      },
+      "mark": {"type": "text", "fontSize": 14, "fontWeight": 700, "baseline": "top", "align": {"expr": "datum.align"}},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"value": 0},
+        "text": {"field": "label"},
+        "color": {
+          "field": "label",
+          "type": "nominal",
+          "scale": {"domain": ["Men", "Women"], "range": ["#1d5fae", "#b13f27"]},
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [{"aggregate": [{"op": "max", "field": "shownYear", "as": "shown"}]}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "fontSize": 44,
+        "fontWeight": 700,
+        "font": "Fraunces, Georgia, serif",
+        "color": "#1f2933",
+        "opacity": 0.85
+      },
+      "encoding": {
+        "x": {"value": 2},
+        "y": {"value": 24},
+        "text": {"field": "shown", "type": "quantitative", "format": "d"}
+      }
+    },
+    {
+      "data": {"values": [{"label": "- - - 1911"}]},
+      "mark": {"type": "text", "align": "left", "baseline": "top", "fontSize": 12, "color": "#4a5563"},
+      "encoding": {"x": {"value": 4}, "y": {"value": 74}, "text": {"field": "label"}}
+    }
+  ],
+  "resolve": {"scale": {"color": "independent"}}
+}

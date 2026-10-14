@@ -1,0 +1,155 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bump chart: rank of the ten most common overseas countries of birth at each Census year, 1901 to 2021. Countries that leave the top ten drop off the bottom of the chart.",
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "data/birthplace_top10.csv",
+    "format": {"type": "csv", "parse": {"year": "number", "population": "number", "rank": "number"}}
+  },
+  "transform": [
+    {"impute": "rank", "key": "year", "groupby": ["country"], "value": 12},
+    {
+      "calculate": "indexof(['United Kingdom', 'Ireland', 'Italy', 'Greece', 'China', 'India'], datum.country) >= 0 ? datum.country : 'Other countries'",
+      "as": "group"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "scale": {"padding": 0.6},
+      "axis": {
+        "labelAngle": 0,
+        "domain": false,
+        "ticks": false,
+        "orient": "top",
+        "labelFontWeight": 600,
+        "labelPadding": 8
+      }
+    },
+    "y": {
+      "field": "rank",
+      "type": "quantitative",
+      "title": "Rank",
+      "scale": {"domain": [10.5, 0.5], "nice": false, "zero": false},
+      "axis": {
+        "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "grid": false,
+        "domain": false,
+        "ticks": false,
+        "titleAngle": 0,
+        "titleAlign": "right",
+        "titleY": -12,
+        "titleX": 6
+      }
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "scale": {
+        "domain": ["United Kingdom", "Ireland", "Italy", "Greece", "China", "India", "Other countries"],
+        "range": ["#2a78d6", "#5a8f2e", "#1a9e8a", "#a04c96", "#d2553a", "#e09f1f", "#cdc5b8"]
+      },
+      "legend": null
+    },
+    "opacity": {"condition": {"param": "focusCountry", "empty": true, "value": 1}, "value": 0.15}
+  },
+  "layer": [
+    {
+      "mark": {"type": "line", "strokeWidth": 3, "clip": true, "interpolate": "monotone", "strokeCap": "round"},
+      "encoding": {
+        "detail": {"field": "country"},
+        "order": {"field": "year"},
+        "strokeWidth": {"condition": {"test": "datum.group == 'Other countries'", "value": 2}, "value": 3.5}
+      },
+      "params": [
+        {
+          "name": "focusCountry",
+          "select": {"type": "point", "fields": ["country"], "on": "pointerover", "clear": "pointerout"}
+        }
+      ]
+    },
+    {
+      "transform": [{"filter": "datum.rank <= 10"}],
+      "mark": {"type": "circle", "size": 64, "stroke": "#fbf8f3", "strokeWidth": 1.5},
+      "encoding": {
+        "tooltip": [
+          {"field": "country", "type": "nominal", "title": "Birthplace"},
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"},
+          {"field": "population", "type": "quantitative", "title": "Residents born there", "format": ","}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.year == 2021 && datum.rank <= 10"}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "baseline": "middle",
+        "stroke": "#fbf8f3",
+        "strokeWidth": 4,
+        "strokeOpacity": 0.95,
+        "strokeJoin": "round"
+      },
+      "encoding": {"text": {"field": "country"}, "color": {"value": "#1f2933"}}
+    },
+    {
+      "transform": [{"filter": "datum.year == 1901 && datum.rank <= 10"}],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -10,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "baseline": "middle",
+        "stroke": "#fbf8f3",
+        "strokeWidth": 4,
+        "strokeOpacity": 0.95,
+        "strokeJoin": "round"
+      },
+      "encoding": {"text": {"field": "country"}, "color": {"value": "#1f2933"}}
+    },
+    {
+      "transform": [{"filter": "datum.year == 2021 && datum.rank <= 10"}],
+      "mark": {"type": "text", "align": "left", "dx": 10, "fontSize": 12, "fontWeight": 600, "baseline": "middle"},
+      "encoding": {"text": {"field": "country"}, "color": {"value": "#1f2933"}}
+    },
+    {
+      "transform": [{"filter": "datum.year == 1901 && datum.rank <= 10"}],
+      "mark": {"type": "text", "align": "right", "dx": -10, "fontSize": 12, "fontWeight": 600, "baseline": "middle"},
+      "encoding": {"text": {"field": "country"}, "color": {"value": "#1f2933"}}
+    },
+    {
+      "data": {
+        "values": [
+          {"year": 1961, "rank": 2, "label": "Italy", "dy": -14},
+          {"year": 1971, "rank": 3, "label": "Greece", "dy": -14},
+          {"year": 1971, "rank": 4, "label": "Yugoslavia", "dy": 15},
+          {"year": 1954, "rank": 4, "label": "Poland", "dy": 15},
+          {"year": 1991, "rank": 6, "label": "Vietnam", "dy": 15},
+          {"year": 1991, "rank": 2, "label": "New Zealand", "dy": -14}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11.5,
+        "fontStyle": "italic",
+        "color": "#4a5563",
+        "dy": {"expr": "datum.dy"}
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "rank", "type": "quantitative"},
+        "text": {"field": "label"},
+        "color": {"value": "#4a5563"},
+        "opacity": {"value": 1}
+      }
+    }
+  ]
+}

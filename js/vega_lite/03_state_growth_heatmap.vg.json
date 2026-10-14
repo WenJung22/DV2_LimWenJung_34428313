@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Heatmap of annual population growth (%) for each state and territory, years ending 30 June 1902 to 2021. A diverging colour scale separates growth (teal) from decline (brown).",
+  "width": "container",
+  "height": 236,
+  "data": {
+    "url": "data/state_growth.csv",
+    "format": {"type": "csv", "parse": {"year": "number", "growth_pct": "number"}}
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "axis": {
+        "values": [1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2021],
+        "labelAngle": 0,
+        "domain": false,
+        "ticks": false,
+        "labelPadding": 6
+      }
+    },
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": ["NSW", "Vic", "Qld", "SA", "WA", "Tas", "NT", "ACT"],
+      "title": null,
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labelFontSize": 13,
+        "labelFontWeight": 600,
+        "labelColor": "#4a5563",
+        "labelPadding": 8
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "rect", "stroke": "#fbf8f3", "strokeWidth": 0.6},
+      "encoding": {
+        "color": {
+          "field": "growth_pct",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [-1, 0, 1, 2, 3, 5],
+            "range": ["#a6611a", "#dfc27d", "#d9eeea", "#a1d6cc", "#5ab4ac", "#2a8c82", "#01665e"]
+          },
+          "legend": {
+            "title": "Annual growth",
+            "orient": "top",
+            "direction": "horizontal",
+            "gradientLength": 320,
+            "gradientThickness": 12,
+            "labelOverlap": false,
+            "labelExpr": "isValid(datum.label) && datum.label != '' ? datum.label + '%' : ''"
+          }
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State/territory"},
+          {"field": "year", "type": "ordinal", "title": "Year ending 30 June"},
+          {"field": "growth_pct", "type": "quantitative", "title": "Growth (%)", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"year": 1916, "state": "NSW", "label": "WWI", "align": "center"},
+          {"year": 1950, "state": "NSW", "label": "Post-war boom", "align": "center"},
+          {"year": 2021, "state": "NSW", "label": "COVID-19", "align": "right"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "dy": -20,
+        "fontSize": 12,
+        "fontWeight": 700,
+        "color": "#1f2933",
+        "align": {"expr": "datum.align"},
+        "dx": {"expr": "datum.align == 'right' ? 6 : 0"}
+      },
+      "encoding": {"text": {"field": "label"}}
+    },
+    {
+      "data": {
+        "values": [{"year": 1916, "state": "NSW"}, {"year": 1950, "state": "NSW"}, {"year": 2021, "state": "NSW"}]
+      },
+      "mark": {"type": "text", "dy": -9, "fontSize": 11, "color": "#1f2933", "text": "▼"}
+    }
+  ]
+}

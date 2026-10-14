@@ -1,0 +1,174 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Choropleth map of the percentage change in usual residents by Local Government Area between the 2011 and 2021 Censuses (2021 boundaries). Classified diverging colours; a dropdown zooms the map to each capital city.",
+  "width": "container",
+  "height": 560,
+  "params": [
+    {
+      "name": "focus",
+      "value": "Australia",
+      "bind": {
+        "input": "select",
+        "options": ["Australia", "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Hobart", "Darwin"],
+        "name": "Zoom to "
+      }
+    },
+    {
+      "name": "views",
+      "value": {
+        "Australia": {"centre": [-3.2, -27.6], "scale": 840},
+        "Sydney": {"centre": [18.9, -33.85], "scale": 24000},
+        "Melbourne": {"centre": [12.85, -37.85], "scale": 22000},
+        "Brisbane": {"centre": [20.85, -27.35], "scale": 15000},
+        "Perth": {"centre": [-16.05, -32.1], "scale": 18000},
+        "Adelaide": {"centre": [6.65, -34.85], "scale": 24000},
+        "Hobart": {"centre": [15.35, -42.85], "scale": 30000},
+        "Darwin": {"centre": [-1.0, -12.55], "scale": 40000}
+      }
+    }
+  ],
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [-18, -36],
+    "rotate": [-132, 0, 0],
+    "center": {"expr": "views[focus].centre"},
+    "scale": {"expr": "views[focus].scale * width / 720"},
+    "translate": {"expr": "[width / 2, height / 2]"}
+  },
+  "layer": [
+    {
+      "data": {"url": "data/aus_lga_2021.topojson", "format": {"type": "topojson", "feature": "lga"}},
+      "transform": [
+        {
+          "lookup": "properties.code",
+          "from": {
+            "data": {
+              "url": "data/lga_change_2011_2021.csv",
+              "format": {
+                "type": "csv",
+                "parse": {
+                  "code": "string",
+                  "pop_2011": "number",
+                  "pop_2016": "number",
+                  "pop_2021": "number",
+                  "change": "number",
+                  "change_pct": "number"
+                }
+              }
+            },
+            "key": "code",
+            "fields": ["name", "state", "pop_2011", "pop_2021", "change", "change_pct"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "#fbf8f3", "strokeWidth": {"expr": "focus == 'Australia' ? 0.3 : 0.8"}},
+      "encoding": {
+        "color": {
+          "field": "change_pct",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [-10, -2, 2, 10, 20, 35],
+            "range": ["#8c510a", "#d8b365", "#efe9df", "#c7eae5", "#80cdc1", "#35978f", "#01665e"]
+          },
+          "legend": {
+            "title": "Change 2011–2021",
+            "orient": "bottom-left",
+            "direction": "vertical",
+            "gradientLength": 210,
+            "gradientThickness": 14,
+            "labelOverlap": false,
+            "labelExpr": "isValid(datum.label) && datum.label != '' ? datum.label + '%' : ''",
+            "fillColor": "#fbf8f3",
+            "padding": 8
+          }
+        },
+        "tooltip": [
+          {"field": "name", "type": "nominal", "title": "Council area"},
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "pop_2011", "type": "quantitative", "title": "2011 Census", "format": ","},
+          {"field": "pop_2021", "type": "quantitative", "title": "2021 Census", "format": ","},
+          {"field": "change_pct", "type": "quantitative", "title": "Change (%)", "format": "+.1f"}
+        ]
+      }
+    },
+    {
+      "data": {"url": "data/aus_states.topojson", "format": {"type": "topojson", "feature": "states"}},
+      "mark": {"type": "geoshape", "filled": false, "stroke": "#5b6573", "strokeWidth": 0.9}
+    },
+    {
+      "data": {
+        "values": [
+          {"code": "59250", "lon": 122.02, "lat": -25.13, "view": "Australia"},
+          {"code": "35300", "lon": 138.76, "lat": -20.01, "view": "Australia"},
+          {"code": "11450", "lon": 150.73, "lat": -34.01, "view": "Sydney"},
+          {"code": "17420", "lon": 150.96, "lat": -33.64, "view": "Sydney"},
+          {"code": "27260", "lon": 144.62, "lat": -37.9, "view": "Melbourne"},
+          {"code": "24650", "lon": 144.63, "lat": -37.69, "view": "Melbourne"},
+          {"code": "24600", "lon": 144.95, "lat": -37.81, "view": "Melbourne"},
+          {"code": "33960", "lon": 152.67, "lat": -27.64, "view": "Brisbane"},
+          {"code": "36720", "lon": 152.92, "lat": -26.68, "view": "Brisbane"},
+          {"code": "57700", "lon": 116.01, "lat": -32.33, "view": "Perth"},
+          {"code": "54830", "lon": 115.83, "lat": -32.23, "view": "Perth"},
+          {"code": "44550", "lon": 138.83, "lat": -35.1, "view": "Adelaide"},
+          {"code": "45680", "lon": 138.66, "lat": -34.67, "view": "Adelaide"},
+          {"code": "64810", "lon": 147.69, "lat": -42.78, "view": "Hobart"},
+          {"code": "72800", "lon": 130.98, "lat": -12.51, "view": "Darwin"}
+        ]
+      },
+      "transform": [
+        {"filter": "datum.view == focus"},
+        {
+          "lookup": "code",
+          "from": {
+            "data": {
+              "url": "data/lga_change_2011_2021.csv",
+              "format": {
+                "type": "csv",
+                "parse": {
+                  "code": "string",
+                  "pop_2011": "number",
+                  "pop_2016": "number",
+                  "pop_2021": "number",
+                  "change": "number",
+                  "change_pct": "number"
+                }
+              }
+            },
+            "key": "code",
+            "fields": ["name", "change_pct"]
+          }
+        },
+        {
+          "calculate": "datum.name + ' ' + (datum.change_pct > 0 ? '+' : '−') + format(abs(datum.change_pct), '.0f') + '%'",
+          "as": "label"
+        }
+      ],
+      "layer": [
+        {"mark": {"type": "circle", "size": 22, "color": "#1f2933", "opacity": 1}},
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 7,
+            "fontSize": 12.5,
+            "fontWeight": 700,
+            "color": "#1f2933",
+            "stroke": "#fbf8f3",
+            "strokeWidth": 3,
+            "strokeOpacity": 0.9
+          },
+          "encoding": {"text": {"field": "label"}}
+        },
+        {
+          "mark": {"type": "text", "align": "left", "dx": 7, "fontSize": 12.5, "fontWeight": 700, "color": "#1f2933"},
+          "encoding": {"text": {"field": "label"}}
+        }
+      ],
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"}
+      }
+    }
+  ]
+}

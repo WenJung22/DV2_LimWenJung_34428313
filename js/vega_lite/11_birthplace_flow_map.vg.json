@@ -1,0 +1,180 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Origin-destination flow map: overseas-born residents of Australia by country of birth in 1921 (top 15) and 2021 (top 30). Line width is proportional to the number of residents; lines follow great circles.",
+  "width": "container",
+  "height": 540,
+  "params": [
+    {
+      "name": "flowYear",
+      "value": 2021,
+      "bind": {"input": "radio", "options": [1921, 2021], "labels": ["1921 Census", "2021"], "name": "Show "}
+    }
+  ],
+  "projection": {"type": "equalEarth", "rotate": [-150, 0, 0]},
+  "layer": [
+    {
+      "data": {"sphere": true},
+      "mark": {"type": "geoshape", "fill": "#f4f0e8", "stroke": "#ddd5c7", "strokeWidth": 1}
+    },
+    {
+      "data": {"graticule": {"step": [30, 30]}},
+      "mark": {"type": "geoshape", "filled": false, "stroke": "#e6dfd3", "strokeWidth": 0.6}
+    },
+    {
+      "data": {"url": "data/world_110m.topojson", "format": {"type": "topojson", "feature": "countries"}},
+      "mark": {"type": "geoshape", "fill": "#e3dccf", "stroke": "#f4f0e8", "strokeWidth": 0.6}
+    },
+    {
+      "data": {"url": "data/world_110m.topojson", "format": {"type": "topojson", "feature": "countries"}},
+      "transform": [{"filter": "datum.properties.name == 'Australia'"}],
+      "mark": {"type": "geoshape", "fill": "#1f3a5f", "stroke": "#f4f0e8", "strokeWidth": 0.6}
+    },
+    {
+      "data": {
+        "url": "data/birthplace_flows.csv",
+        "format": {"type": "csv", "parse": {"year": "number", "population": "number", "lon": "number", "lat": "number"}}
+      },
+      "transform": [
+        {"filter": "datum.year == flowYear"},
+        {
+          "calculate": "{type: 'LineString', coordinates: [[datum.lon, datum.lat], [134.0, -25.5]]}",
+          "as": "route"
+        }
+      ],
+      "mark": {"type": "geoshape", "filled": false, "strokeCap": "round", "opacity": 0.72},
+      "encoding": {
+        "shape": {"field": "route", "type": "geojson"},
+        "color": {"value": "#d2553a"},
+        "strokeWidth": {
+          "field": "population",
+          "type": "quantitative",
+          "scale": {"type": "linear", "domain": [0, 1150000], "range": [0.6, 16]},
+          "legend": {
+            "title": "Residents born there",
+            "values": [10000, 100000, 500000, 1000000],
+            "labelExpr": "format(datum.value, ',')",
+            "orient": "bottom-left",
+            "symbolType": "stroke",
+            "symbolStrokeColor": "#d2553a",
+            "fillColor": "#f4f0e8",
+            "padding": 8
+          }
+        },
+        "order": {"field": "population", "sort": "ascending"},
+        "tooltip": [
+          {"field": "country", "type": "nominal", "title": "Born in"},
+          {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+          {"field": "population", "type": "quantitative", "title": "Residents of Australia", "format": ","}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/birthplace_flows.csv",
+        "format": {"type": "csv", "parse": {"year": "number", "population": "number", "lon": "number", "lat": "number"}}
+      },
+      "transform": [
+        {"filter": "datum.year == flowYear"},
+        {
+          "window": [{"op": "row_number", "as": "rank"}],
+          "sort": [{"field": "population", "order": "descending"}]
+        },
+        {
+          "lookup": "country",
+          "from": {
+            "data": {
+              "values": [
+                {"country": "United Kingdom", "align": "left", "dx": 4, "dy": -12},
+                {"country": "Ireland", "align": "right", "dx": -6, "dy": 2},
+                {"country": "Germany", "align": "left", "dx": 6, "dy": 6},
+                {"country": "Italy", "align": "left", "dx": 6, "dy": 8}
+              ]
+            },
+            "key": "country",
+            "fields": ["align", "dx", "dy"]
+          },
+          "default": null
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "circle",
+            "size": 26,
+            "color": "#b13f27",
+            "stroke": "#f4f0e8",
+            "strokeWidth": 1,
+            "opacity": 1
+          },
+          "encoding": {
+            "tooltip": [
+              {"field": "country", "type": "nominal", "title": "Born in"},
+              {
+                "field": "population",
+                "type": "quantitative",
+                "title": "Residents of Australia",
+                "format": ","
+              }
+            ]
+          }
+        },
+        {
+          "transform": [{"filter": "datum.rank <= 8"}],
+          "mark": {
+            "type": "text",
+            "align": {"expr": "datum.align || 'left'"},
+            "dx": {"expr": "isValid(datum.dx) ? datum.dx : 6"},
+            "dy": {"expr": "isValid(datum.dy) ? datum.dy : -6"},
+            "fontSize": 12,
+            "fontWeight": 700,
+            "color": "#1f2933",
+            "stroke": "#f4f0e8",
+            "strokeWidth": 3,
+            "strokeOpacity": 0.85
+          },
+          "encoding": {"text": {"field": "country"}}
+        },
+        {
+          "transform": [{"filter": "datum.rank <= 8"}],
+          "mark": {
+            "type": "text",
+            "align": {"expr": "datum.align || 'left'"},
+            "dx": {"expr": "isValid(datum.dx) ? datum.dx : 6"},
+            "dy": {"expr": "isValid(datum.dy) ? datum.dy : -6"},
+            "fontSize": 12,
+            "fontWeight": 700,
+            "color": "#1f2933"
+          },
+          "encoding": {"text": {"field": "country"}}
+        }
+      ],
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"}
+      }
+    },
+    {
+      "data": {
+        "url": "data/birthplace_flows.csv",
+        "format": {"type": "csv", "parse": {"year": "number", "population": "number", "lon": "number", "lat": "number"}}
+      },
+      "transform": [
+        {"filter": "datum.year == flowYear"},
+        {"aggregate": [{"op": "sum", "field": "population", "as": "shown"}]},
+        {
+          "calculate": "flowYear + ': ' + format(datum.shown, ',') + ' residents born in the countries shown'",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "fontSize": 13,
+        "fontWeight": 600,
+        "color": "#1f2933"
+      },
+      "encoding": {"x": {"value": 6}, "y": {"value": 6}, "text": {"field": "label"}}
+    }
+  ]
+}

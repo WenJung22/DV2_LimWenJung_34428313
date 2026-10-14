@@ -1,0 +1,160 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Recorded population of Australia, 1788 to 2021, with the 18 national Census years marked and key events annotated.",
+  "width": "container",
+  "height": 380,
+  "data": {
+    "url": "data/population_history.csv",
+    "format": {"type": "csv", "parse": {"year": "number", "population": "number"}}
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "title": null,
+      "scale": {"domain": [1788, 2021], "nice": false},
+      "axis": {
+        "format": "d",
+        "values": [1788, 1825, 1850, 1875, 1901, 1925, 1950, 1975, 2000, 2021],
+        "grid": false,
+        "tickSize": 4
+      }
+    },
+    "y": {
+      "field": "population",
+      "type": "quantitative",
+      "title": null,
+      "scale": {"domain": [0, 27000000]},
+      "axis": {
+        "values": [0, 5000000, 10000000, 15000000, 20000000, 25000000],
+        "labelExpr": "datum.value == 0 ? '0' : datum.value / 1e6 + ' million'",
+        "domain": false,
+        "ticks": false
+      }
+    }
+  },
+  "layer": [
+    {"mark": {"type": "area", "color": "#2a78d6", "opacity": 0.1}},
+    {"mark": {"type": "line", "color": "#2a78d6", "strokeWidth": 2.5}},
+    {
+      "data": {
+        "values": [
+          {"year": 1788, "ly": 6500000, "label": "1788 · First Fleet arrives at Sydney Cove", "align": "left"},
+          {"year": 1851, "ly": 10500000, "label": "1851 · Gold rushes begin", "align": "left"},
+          {"year": 1901, "ly": 14500000, "label": "1901 · Federation: 3.8 million people", "align": "left"},
+          {
+            "year": 1911,
+            "ly": 18500000,
+            "label": "1911 · First national Census counts 4,455,005 people",
+            "align": "left"
+          },
+          {"year": 1945, "ly": 22500000, "label": "1945 · Post-war migration program begins", "align": "left"},
+          {
+            "year": 1961,
+            "ly": 3500000,
+            "label": ["1961 · Aboriginal and Torres Strait Islander", "people first included in estimates"],
+            "align": "left"
+          },
+          {
+            "year": 2020,
+            "ly": 26300000,
+            "label": "2020–21 · COVID-19 border closures stall growth",
+            "align": "right"
+          }
+        ]
+      },
+      "transform": [
+        {
+          "lookup": "year",
+          "from": {
+            "data": {
+              "url": "data/population_history.csv",
+              "format": {"type": "csv", "parse": {"year": "number", "population": "number"}}
+            },
+            "key": "year",
+            "fields": ["population"]
+          }
+        }
+      ],
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "#9aa3ad", "strokeWidth": 1},
+          "encoding": {"y": {"field": "population", "type": "quantitative"}, "y2": {"field": "ly"}}
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 12.5,
+            "color": "#4a5563",
+            "dx": 0,
+            "dy": -7,
+            "baseline": "bottom",
+            "align": {"expr": "datum.align"},
+            "lineHeight": 15
+          },
+          "encoding": {"y": {"field": "ly", "type": "quantitative"}, "text": {"field": "label"}}
+        }
+      ]
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "oneOf": [
+              1911,
+              1921,
+              1933,
+              1947,
+              1954,
+              1961,
+              1966,
+              1971,
+              1976,
+              1981,
+              1986,
+              1991,
+              1996,
+              2001,
+              2006,
+              2011,
+              2016,
+              2021
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 42,
+        "color": "#d2553a",
+        "stroke": "#fbf8f3",
+        "strokeWidth": 1.5,
+        "opacity": 1
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "year", "type": "quantitative", "title": "Census year", "format": "d"},
+          {"field": "population", "type": "quantitative", "title": "Estimated population", "format": ","}
+        ]
+      }
+    },
+    {
+      "params": [
+        {
+          "name": "hover",
+          "select": {"type": "point", "fields": ["year"], "nearest": true, "on": "pointerover", "clear": "pointerout"}
+        }
+      ],
+      "mark": {"type": "rule", "color": "#1f2933", "strokeWidth": 1},
+      "encoding": {
+        "opacity": {"condition": {"param": "hover", "empty": false, "value": 0.5}, "value": 0},
+        "tooltip": [
+          {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+          {"field": "population", "type": "quantitative", "title": "Population", "format": ","},
+          {"field": "reference_date", "type": "nominal", "title": "Estimate at"}
+        ]
+      }
+    }
+  ]
+}

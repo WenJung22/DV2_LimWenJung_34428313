@@ -1,0 +1,97 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Multi-line chart: share of the population reporting Christianity, other religions and no religion at each Census, 1971 to 2021.",
+  "width": "container",
+  "height": 330,
+  "data": {
+    "url": "data/religion_1971_2021.csv",
+    "format": {"type": "csv", "parse": {"year": "number", "pct": "number"}}
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "title": null,
+      "scale": {"domain": [1971, 2021], "nice": false},
+      "axis": {"format": "d", "values": [1971, 1981, 1991, 2001, 2011, 2021], "grid": false, "tickSize": 4}
+    },
+    "y": {
+      "field": "pct",
+      "type": "quantitative",
+      "title": null,
+      "scale": {"domain": [0, 100]},
+      "axis": {"values": [0, 25, 50, 75, 100], "labelExpr": "datum.value + '%'", "domain": false, "ticks": false}
+    },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Christianity", "Other religions", "No religion"],
+        "range": ["#2a78d6", "#1a9e8a", "#a04c96"]
+      },
+      "legend": null
+    }
+  },
+  "layer": [
+    {"mark": {"type": "line", "strokeWidth": 2.5, "point": {"size": 36, "filled": true}}},
+    {
+      "transform": [{"filter": "datum.year == 1971 || datum.year == 2021"}],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": 700,
+        "dy": {"expr": "datum.group == 'No religion' && datum.year == 2021 ? 16 : -11"}
+      },
+      "encoding": {"text": {"field": "pct", "type": "quantitative", "format": ".1f"}, "color": {"value": "#1f2933"}}
+    },
+    {
+      "data": {
+        "values": [
+          {"year": 1996, "pct": 70.9, "label": "Christianity", "dy": -16},
+          {"year": 1996, "pct": 16.6, "label": "No religion", "dy": -16},
+          {"year": 2006, "pct": 5.6, "label": "Other religions", "dy": -12}
+        ]
+      },
+      "mark": {"type": "text", "fontSize": 13, "fontWeight": 700, "dy": {"expr": "datum.dy"}},
+      "encoding": {
+        "text": {"field": "label"},
+        "color": {
+          "field": "label",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Christianity", "Other religions", "No religion"],
+            "range": ["#1d5fae", "#11766a", "#86377d"]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "params": [
+        {
+          "name": "religionHover",
+          "select": {"type": "point", "fields": ["year"], "nearest": true, "on": "pointerover", "clear": "pointerout"}
+        }
+      ],
+      "transform": [{"pivot": "group", "value": "pct", "groupby": ["year"]}],
+      "mark": {"type": "rule", "color": "#1f2933", "strokeWidth": 1},
+      "encoding": {
+        "y": null,
+        "color": null,
+        "opacity": {"condition": {"param": "religionHover", "empty": false, "value": 0.4}, "value": 0},
+        "tooltip": [
+          {"field": "year", "type": "quantitative", "title": "Census", "format": "d"},
+          {"field": "Christianity", "type": "quantitative", "title": "Christianity (%)", "format": ".1f"},
+          {
+            "field": "Other religions",
+            "type": "quantitative",
+            "title": "Other religions (%)",
+            "format": ".1f"
+          },
+          {"field": "No religion", "type": "quantitative", "title": "No religion (%)", "format": ".1f"}
+        ]
+      }
+    }
+  ],
+  "resolve": {"scale": {"color": "independent"}}
+}

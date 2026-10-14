@@ -1,0 +1,147 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Proportional symbol map: population of Australia's 49 major urban centres at each Census from 1911 to 2021. Circle area is proportional to population; colour separates capital cities from regional centres.",
+  "width": "container",
+  "height": 560,
+  "params": [
+    {
+      "name": "cityYear",
+      "value": 1911,
+      "bind": {"input": "range", "min": 1911, "max": 2021, "step": 1, "name": "Census year "}
+    }
+  ],
+  "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-132, 0, 0]},
+  "layer": [
+    {
+      "data": {"url": "data/aus_states.topojson", "format": {"type": "topojson", "feature": "states"}},
+      "mark": {"type": "geoshape", "fill": "#ece5d8", "stroke": "#fbf8f3", "strokeWidth": 1.5}
+    },
+    {
+      "data": {
+        "url": "data/major_centres.csv",
+        "format": {"type": "csv", "parse": {"year": "number", "population": "number", "lon": "number", "lat": "number"}}
+      },
+      "transform": [
+        {"filter": "datum.year <= cityYear"},
+        {"joinaggregate": [{"op": "max", "field": "year", "as": "shownYear"}]},
+        {"filter": "datum.year == datum.shownYear"}
+      ],
+      "mark": {"type": "circle", "stroke": "#fbf8f3", "strokeWidth": 1, "opacity": 0.78},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "size": {
+          "field": "population",
+          "type": "quantitative",
+          "scale": {"type": "linear", "domain": [0, 5300000], "range": [0, 5400]},
+          "legend": {
+            "title": "People",
+            "values": [100000, 1000000, 5000000],
+            "labelExpr": "datum.value >= 1e6 ? datum.value / 1e6 + ' million' : format(datum.value, ',')",
+            "orient": "top-left",
+            "symbolFillColor": "#ffffff",
+            "symbolStrokeColor": "#9aa3ad",
+            "symbolStrokeWidth": 1,
+            "symbolOpacity": 1
+          }
+        },
+        "color": {
+          "field": "type",
+          "type": "nominal",
+          "scale": {"domain": ["Capital city", "Regional centre"], "range": ["#d2553a", "#1a9e8a"]},
+          "legend": {"title": null, "orient": "bottom-left", "symbolOpacity": 0.8}
+        },
+        "order": {"field": "population", "sort": "descending"},
+        "tooltip": [
+          {"field": "centre", "type": "nominal", "title": "Centre"},
+          {"field": "type", "type": "nominal", "title": "Type"},
+          {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+          {"field": "population", "type": "quantitative", "title": "Population", "format": ","}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/major_centres.csv",
+        "format": {"type": "csv", "parse": {"year": "number", "population": "number", "lon": "number", "lat": "number"}}
+      },
+      "transform": [
+        {"filter": "datum.type == 'Capital city' && datum.year <= cityYear"},
+        {"joinaggregate": [{"op": "max", "field": "year", "as": "shownYear"}]},
+        {"filter": "datum.year == datum.shownYear"},
+        {
+          "lookup": "centre",
+          "from": {
+            "data": {
+              "values": [
+                {"centre": "Sydney", "labelLon": 153.6, "labelLat": -34.9, "align": "left"},
+                {"centre": "Melbourne", "labelLon": 146.2, "labelLat": -40.1, "align": "left"},
+                {"centre": "Brisbane", "labelLon": 154.4, "labelLat": -26.6, "align": "left"},
+                {"centre": "Perth", "labelLon": 113.2, "labelLat": -32.6, "align": "right"},
+                {"centre": "Adelaide", "labelLon": 136.4, "labelLat": -37.0, "align": "right"},
+                {"centre": "Hobart", "labelLon": 149.4, "labelLat": -43.6, "align": "left"},
+                {"centre": "Darwin", "labelLon": 129.2, "labelLat": -10.9, "align": "right"},
+                {"centre": "Canberra", "labelLon": 151.6, "labelLat": -38.0, "align": "left"}
+              ]
+            },
+            "key": "centre",
+            "fields": ["labelLon", "labelLat", "align"]
+          }
+        },
+        {"calculate": "[datum.centre, format(datum.population, ',')]", "as": "label"}
+      ],
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "#9aa3ad", "strokeWidth": 0.8},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "longitude2": {"field": "labelLon"},
+            "latitude2": {"field": "labelLat"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "lineHeight": 14,
+            "baseline": "middle",
+            "dx": 0,
+            "align": {"expr": "datum.align"}
+          },
+          "encoding": {
+            "longitude": {"field": "labelLon", "type": "quantitative"},
+            "latitude": {"field": "labelLat", "type": "quantitative"},
+            "text": {"field": "label"},
+            "color": {"value": "#1f2933"}
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "url": "data/major_centres.csv",
+        "format": {"type": "csv", "parse": {"year": "number", "population": "number", "lon": "number", "lat": "number"}}
+      },
+      "transform": [
+        {"filter": "datum.year <= cityYear"},
+        {"aggregate": [{"op": "max", "field": "year", "as": "shownYear"}]}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "top",
+        "fontSize": 54,
+        "fontWeight": 700,
+        "font": "Fraunces, Georgia, serif",
+        "color": "#d2553a",
+        "opacity": 0.9
+      },
+      "encoding": {
+        "x": {"value": {"expr": "width - 6"}},
+        "y": {"value": 4},
+        "text": {"field": "shownYear", "type": "quantitative", "format": "d"}
+      }
+    }
+  ]
+}

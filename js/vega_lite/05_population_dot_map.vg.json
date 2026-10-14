@@ -1,0 +1,113 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Dot density map of where Australians lived on Census night 2021. One dot represents 2,500 usual residents, placed at random within each Statistical Area Level 2.",
+  "width": "container",
+  "height": 560,
+  "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-132, 0, 0]},
+  "layer": [
+    {
+      "data": {"url": "data/aus_states.topojson", "format": {"type": "topojson", "feature": "states"}},
+      "mark": {"type": "geoshape", "fill": "#ece5d8", "stroke": "#fbf8f3", "strokeWidth": 1.5}
+    },
+    {
+      "data": {
+        "url": "data/population_dots_2021.csv",
+        "format": {"type": "csv", "parse": {"lon": "number", "lat": "number"}}
+      },
+      "mark": {"type": "circle", "size": 3.2, "color": "#1f3a5f", "opacity": 0.55},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"name": "Sydney", "lon": 151.21, "lat": -33.87, "lx": 153.4, "ly": -34.3, "align": "left"},
+          {"name": "Melbourne", "lon": 144.96, "lat": -37.81, "lx": 145.6, "ly": -39.6, "align": "left"},
+          {"name": "Brisbane", "lon": 153.03, "lat": -27.47, "lx": 154.3, "ly": -27.2, "align": "left"},
+          {"name": "Perth", "lon": 115.86, "lat": -31.95, "lx": 113.4, "ly": -31.4, "align": "right"},
+          {"name": "Adelaide", "lon": 138.6, "lat": -34.93, "lx": 136.6, "ly": -36.6, "align": "right"},
+          {"name": "Hobart", "lon": 147.33, "lat": -42.88, "lx": 149.2, "ly": -43.3, "align": "left"},
+          {"name": "Darwin", "lon": 130.84, "lat": -12.46, "lx": 129.3, "ly": -11.4, "align": "right"},
+          {"name": "Canberra", "lon": 149.13, "lat": -35.28, "lx": 147.2, "ly": -36.9, "align": "right"},
+          {"name": "Alice Springs", "lon": 133.88, "lat": -23.7, "lx": 133.88, "ly": -22.3, "align": "center"}
+        ]
+      },
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "#6e7783", "strokeWidth": 0.8},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "longitude2": {"field": "lx"},
+            "latitude2": {"field": "ly"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 12.5,
+            "fontWeight": 700,
+            "color": "#1f2933",
+            "baseline": "middle",
+            "dx": 0,
+            "align": {"expr": "datum.align"},
+            "stroke": "#fbf8f3",
+            "strokeWidth": 4,
+            "strokeOpacity": 0.9
+          },
+          "encoding": {
+            "longitude": {"field": "lx", "type": "quantitative"},
+            "latitude": {"field": "ly", "type": "quantitative"},
+            "text": {"field": "name"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 12.5,
+            "fontWeight": 700,
+            "color": "#1f2933",
+            "baseline": "middle",
+            "dx": 0,
+            "align": {"expr": "datum.align"}
+          },
+          "encoding": {
+            "longitude": {"field": "lx", "type": "quantitative"},
+            "latitude": {"field": "ly", "type": "quantitative"},
+            "text": {"field": "name"}
+          }
+        }
+      ]
+    },
+    {
+      "data": {"values": [{"lon": 124.5, "lat": -24.0, "text": ["Vast inland areas", "have few or no dots"]}]},
+      "mark": {
+        "type": "text",
+        "fontSize": 12.5,
+        "fontStyle": "italic",
+        "color": "#4a5563",
+        "align": "center",
+        "lineHeight": 16
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "text"}
+      }
+    },
+    {
+      "data": {"values": [{"text": "● = 2,500 people"}]},
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 13,
+        "fontWeight": 600,
+        "color": "#1f3a5f"
+      },
+      "encoding": {"x": {"value": 8}, "y": {"value": {"expr": "height - 8"}}, "text": {"field": "text"}}
+    }
+  ]
+}

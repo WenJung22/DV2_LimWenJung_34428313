@@ -1,0 +1,853 @@
+centre,type,year,population,lon,lat
+Sydney,Capital city,1911,629503,150.856,-33.732
+Sydney,Capital city,1921,899059,150.856,-33.732
+Sydney,Capital city,1933,1235267,150.856,-33.732
+Sydney,Capital city,1947,1484004,150.856,-33.732
+Sydney,Capital city,1954,1863217,150.856,-33.732
+Sydney,Capital city,1961,2183231,150.856,-33.732
+Sydney,Capital city,1966,2446345,150.856,-33.732
+Sydney,Capital city,1971,2807828,150.856,-33.732
+Sydney,Capital city,1976,3021982,150.856,-33.732
+Sydney,Capital city,1981,3204696,150.856,-33.732
+Sydney,Capital city,1986,3471567,150.856,-33.732
+Sydney,Capital city,1991,3672914,150.856,-33.732
+Sydney,Capital city,1996,3856646,150.856,-33.732
+Sydney,Capital city,2001,4102580,150.856,-33.732
+Sydney,Capital city,2006,4256161,150.856,-33.732
+Sydney,Capital city,2011,4608949,150.856,-33.732
+Sydney,Capital city,2016,5024923,150.856,-33.732
+Sydney,Capital city,2021,5261801,150.856,-33.732
+Melbourne,Capital city,1911,588971,145.285,-37.916
+Melbourne,Capital city,1921,766465,145.285,-37.916
+Melbourne,Capital city,1933,991934,145.285,-37.916
+Melbourne,Capital city,1947,1226409,145.285,-37.916
+Melbourne,Capital city,1954,1524062,145.285,-37.916
+Melbourne,Capital city,1961,1912055,145.285,-37.916
+Melbourne,Capital city,1966,2110168,145.285,-37.916
+Melbourne,Capital city,1971,2503450,145.285,-37.916
+Melbourne,Capital city,1976,2604035,145.285,-37.916
+Melbourne,Capital city,1981,2722817,145.285,-37.916
+Melbourne,Capital city,1986,2966901,145.285,-37.916
+Melbourne,Capital city,1991,3194707,145.285,-37.916
+Melbourne,Capital city,1996,3304912,145.285,-37.916
+Melbourne,Capital city,2001,3500249,145.285,-37.916
+Melbourne,Capital city,2006,3760760,145.285,-37.916
+Melbourne,Capital city,2011,4169366,145.285,-37.916
+Melbourne,Capital city,2016,4714387,145.285,-37.916
+Melbourne,Capital city,2021,4975319,145.285,-37.916
+Brisbane,Capital city,1911,139480,153.042,-27.698
+Brisbane,Capital city,1921,209946,153.042,-27.698
+Brisbane,Capital city,1933,299748,153.042,-27.698
+Brisbane,Capital city,1947,402030,153.042,-27.698
+Brisbane,Capital city,1954,502353,153.042,-27.698
+Brisbane,Capital city,1961,621550,153.042,-27.698
+Brisbane,Capital city,1966,718822,153.042,-27.698
+Brisbane,Capital city,1971,867784,153.042,-27.698
+Brisbane,Capital city,1976,957745,153.042,-27.698
+Brisbane,Capital city,1981,1028527,153.042,-27.698
+Brisbane,Capital city,1986,1217348,153.042,-27.698
+Brisbane,Capital city,1991,1411773,153.042,-27.698
+Brisbane,Capital city,1996,1560296,153.042,-27.698
+Brisbane,Capital city,2001,1693556,153.042,-27.698
+Brisbane,Capital city,2006,1908265,153.042,-27.698
+Brisbane,Capital city,2011,2147436,153.042,-27.698
+Brisbane,Capital city,2016,2362672,153.042,-27.698
+Brisbane,Capital city,2021,2567714,153.042,-27.698
+Adelaide,Capital city,1911,189646,138.642,-34.916
+Adelaide,Capital city,1921,255375,138.642,-34.916
+Adelaide,Capital city,1933,312619,138.642,-34.916
+Adelaide,Capital city,1947,382454,138.642,-34.916
+Adelaide,Capital city,1954,483535,138.642,-34.916
+Adelaide,Capital city,1961,587957,138.642,-34.916
+Adelaide,Capital city,1966,727916,138.642,-34.916
+Adelaide,Capital city,1971,842693,138.642,-34.916
+Adelaide,Capital city,1976,900432,138.642,-34.916
+Adelaide,Capital city,1981,931886,138.642,-34.916
+Adelaide,Capital city,1986,1003548,138.642,-34.916
+Adelaide,Capital city,1991,1093525,138.642,-34.916
+Adelaide,Capital city,1996,1116237,138.642,-34.916
+Adelaide,Capital city,2001,1148006,138.642,-34.916
+Adelaide,Capital city,2006,1189243,138.642,-34.916
+Adelaide,Capital city,2011,1264091,138.642,-34.916
+Adelaide,Capital city,2016,1324057,138.642,-34.916
+Adelaide,Capital city,2021,1401872,138.642,-34.916
+Perth,Capital city,1911,106792,115.935,-32.183
+Perth,Capital city,1921,154873,115.935,-32.183
+Perth,Capital city,1933,207440,115.935,-32.183
+Perth,Capital city,1947,272528,115.935,-32.183
+Perth,Capital city,1954,348596,115.935,-32.183
+Perth,Capital city,1961,420133,115.935,-32.183
+Perth,Capital city,1966,499969,115.935,-32.183
+Perth,Capital city,1971,703199,115.935,-32.183
+Perth,Capital city,1976,805747,115.935,-32.183
+Perth,Capital city,1981,898918,115.935,-32.183
+Perth,Capital city,1986,1050120,115.935,-32.183
+Perth,Capital city,1991,1226115,115.935,-32.183
+Perth,Capital city,1996,1343355,115.935,-32.183
+Perth,Capital city,2001,1455361,115.935,-32.183
+Perth,Capital city,2006,1576912,115.935,-32.183
+Perth,Capital city,2011,1833567,115.935,-32.183
+Perth,Capital city,2016,2019263,115.935,-32.183
+Perth,Capital city,2021,2191838,115.935,-32.183
+Hobart,Capital city,1911,39937,147.365,-42.759
+Hobart,Capital city,1921,52361,147.365,-42.759
+Hobart,Capital city,1933,70406,147.365,-42.759
+Hobart,Capital city,1947,76534,147.365,-42.759
+Hobart,Capital city,1954,95223,147.365,-42.759
+Hobart,Capital city,1961,115932,147.365,-42.759
+Hobart,Capital city,1966,119469,147.365,-42.759
+Hobart,Capital city,1971,153216,147.365,-42.759
+Hobart,Capital city,1976,162062,147.365,-42.759
+Hobart,Capital city,1981,168359,147.365,-42.759
+Hobart,Capital city,1986,182071,147.365,-42.759
+Hobart,Capital city,1991,191648,147.365,-42.759
+Hobart,Capital city,1996,197124,147.365,-42.759
+Hobart,Capital city,2001,197403,147.365,-42.759
+Hobart,Capital city,2006,204753,147.365,-42.759
+Hobart,Capital city,2011,216273,147.365,-42.759
+Hobart,Capital city,2016,225913,147.365,-42.759
+Hobart,Capital city,2021,250717,147.365,-42.759
+Darwin,Capital city,1911,958,131.001,-12.487
+Darwin,Capital city,1921,1398,131.001,-12.487
+Darwin,Capital city,1933,1566,131.001,-12.487
+Darwin,Capital city,1947,2538,131.001,-12.487
+Darwin,Capital city,1954,8071,131.001,-12.487
+Darwin,Capital city,1961,12335,131.001,-12.487
+Darwin,Capital city,1966,20413,131.001,-12.487
+Darwin,Capital city,1971,37060,131.001,-12.487
+Darwin,Capital city,1976,46655,131.001,-12.487
+Darwin,Capital city,1981,61412,131.001,-12.487
+Darwin,Capital city,1986,75360,131.001,-12.487
+Darwin,Capital city,1991,86414,131.001,-12.487
+Darwin,Capital city,1996,97247,131.001,-12.487
+Darwin,Capital city,2001,108280,131.001,-12.487
+Darwin,Capital city,2006,113461,131.001,-12.487
+Darwin,Capital city,2011,129106,131.001,-12.487
+Darwin,Capital city,2016,147102,131.001,-12.487
+Darwin,Capital city,2021,147971,131.001,-12.487
+Canberra,Capital city,1921,1150,149.172,-35.314
+Canberra,Capital city,1933,7325,149.172,-35.314
+Canberra,Capital city,1947,15156,149.172,-35.314
+Canberra,Capital city,1954,28277,149.172,-35.314
+Canberra,Capital city,1961,56449,149.172,-35.314
+Canberra,Capital city,1966,92308,149.172,-35.314
+Canberra,Capital city,1971,142822,149.172,-35.314
+Canberra,Capital city,1976,196538,149.172,-35.314
+Canberra,Capital city,1981,220423,149.172,-35.314
+Canberra,Capital city,1986,257852,149.172,-35.314
+Canberra,Capital city,1991,288586,149.172,-35.314
+Canberra,Capital city,1996,309629,149.172,-35.314
+Canberra,Capital city,2001,321538,149.172,-35.314
+Canberra,Capital city,2006,335170,149.172,-35.314
+Canberra,Capital city,2011,367985,149.172,-35.314
+Canberra,Capital city,2016,403104,149.172,-35.314
+Canberra,Capital city,2021,452508,149.172,-35.314
+Albany,Regional centre,1911,5119,117.88,-34.967
+Albany,Regional centre,1921,5231,117.88,-34.967
+Albany,Regional centre,1933,5569,117.88,-34.967
+Albany,Regional centre,1947,6295,117.88,-34.967
+Albany,Regional centre,1954,10528,117.88,-34.967
+Albany,Regional centre,1961,13275,117.88,-34.967
+Albany,Regional centre,1966,14666,117.88,-34.967
+Albany,Regional centre,1971,16754,117.88,-34.967
+Albany,Regional centre,1976,17916,117.88,-34.967
+Albany,Regional centre,1981,20674,117.88,-34.967
+Albany,Regional centre,1986,22004,117.88,-34.967
+Albany,Regional centre,1991,23929,117.88,-34.967
+Albany,Regional centre,1996,25684,117.88,-34.967
+Albany,Regional centre,2001,28557,117.88,-34.967
+Albany,Regional centre,2006,30242,117.88,-34.967
+Albany,Regional centre,2011,31791,117.88,-34.967
+Albany,Regional centre,2016,33784,117.88,-34.967
+Albany,Regional centre,2021,36290,117.88,-34.967
+Albury - Wodonga,Regional centre,1911,8249,146.905,-36.121
+Albury - Wodonga,Regional centre,1921,10306,146.905,-36.121
+Albury - Wodonga,Regional centre,1933,13793,146.905,-36.121
+Albury - Wodonga,Regional centre,1947,18685,146.905,-36.121
+Albury - Wodonga,Regional centre,1954,27650,146.905,-36.121
+Albury - Wodonga,Regional centre,1961,35951,146.905,-36.121
+Albury - Wodonga,Regional centre,1966,36990,146.905,-36.121
+Albury - Wodonga,Regional centre,1971,41494,146.905,-36.121
+Albury - Wodonga,Regional centre,1976,48697,146.905,-36.121
+Albury - Wodonga,Regional centre,1981,55892,146.905,-36.121
+Albury - Wodonga,Regional centre,1986,59857,146.905,-36.121
+Albury - Wodonga,Regional centre,1991,68974,146.905,-36.121
+Albury - Wodonga,Regional centre,1996,73176,146.905,-36.121
+Albury - Wodonga,Regional centre,2001,76451,146.905,-36.121
+Albury - Wodonga,Regional centre,2006,80119,146.905,-36.121
+Albury - Wodonga,Regional centre,2011,84195,146.905,-36.121
+Albury - Wodonga,Regional centre,2016,90836,146.905,-36.121
+Albury - Wodonga,Regional centre,2021,97730,146.905,-36.121
+Alice Springs,Regional centre,1954,3002,133.868,-23.731
+Alice Springs,Regional centre,1961,5124,133.868,-23.731
+Alice Springs,Regional centre,1966,6634,133.868,-23.731
+Alice Springs,Regional centre,1971,11179,133.868,-23.731
+Alice Springs,Regional centre,1976,14149,133.868,-23.731
+Alice Springs,Regional centre,1981,18395,133.868,-23.731
+Alice Springs,Regional centre,1986,23021,133.868,-23.731
+Alice Springs,Regional centre,1991,24284,133.868,-23.731
+Alice Springs,Regional centre,1996,25404,133.868,-23.731
+Alice Springs,Regional centre,2001,26849,133.868,-23.731
+Alice Springs,Regional centre,2006,26700,133.868,-23.731
+Alice Springs,Regional centre,2011,28489,133.868,-23.731
+Alice Springs,Regional centre,2016,26518,133.868,-23.731
+Alice Springs,Regional centre,2021,28483,133.868,-23.731
+Ballarat,Regional centre,1911,40153,143.846,-37.552
+Ballarat,Regional centre,1921,36409,143.846,-37.552
+Ballarat,Regional centre,1933,37411,143.846,-37.552
+Ballarat,Regional centre,1947,40181,143.846,-37.552
+Ballarat,Regional centre,1954,48050,143.846,-37.552
+Ballarat,Regional centre,1961,54771,143.846,-37.552
+Ballarat,Regional centre,1966,56290,143.846,-37.552
+Ballarat,Regional centre,1971,58620,143.846,-37.552
+Ballarat,Regional centre,1976,68450,143.846,-37.552
+Ballarat,Regional centre,1981,71930,143.846,-37.552
+Ballarat,Regional centre,1986,75210,143.846,-37.552
+Ballarat,Regional centre,1991,77121,143.846,-37.552
+Ballarat,Regional centre,1996,77329,143.846,-37.552
+Ballarat,Regional centre,2001,80774,143.846,-37.552
+Ballarat,Regional centre,2006,84971,143.846,-37.552
+Ballarat,Regional centre,2011,93470,143.846,-37.552
+Ballarat,Regional centre,2016,101678,143.846,-37.552
+Ballarat,Regional centre,2021,111724,143.846,-37.552
+Bathurst,Regional centre,1911,8575,149.588,-33.407
+Bathurst,Regional centre,1921,9442,149.588,-33.407
+Bathurst,Regional centre,1933,10413,149.588,-33.407
+Bathurst,Regional centre,1947,11871,149.588,-33.407
+Bathurst,Regional centre,1954,16089,149.588,-33.407
+Bathurst,Regional centre,1961,16938,149.588,-33.407
+Bathurst,Regional centre,1966,17230,149.588,-33.407
+Bathurst,Regional centre,1971,17196,149.588,-33.407
+Bathurst,Regional centre,1976,20576,149.588,-33.407
+Bathurst,Regional centre,1981,22703,149.588,-33.407
+Bathurst,Regional centre,1986,24460,149.588,-33.407
+Bathurst,Regional centre,1991,27013,149.588,-33.407
+Bathurst,Regional centre,1996,28576,149.588,-33.407
+Bathurst,Regional centre,2001,30048,149.588,-33.407
+Bathurst,Regional centre,2006,31157,149.588,-33.407
+Bathurst,Regional centre,2011,33754,149.588,-33.407
+Bathurst,Regional centre,2016,35878,149.588,-33.407
+Bathurst,Regional centre,2021,37509,149.588,-33.407
+Bendigo,Regional centre,1911,36127,144.266,-36.755
+Bendigo,Regional centre,1921,30401,144.266,-36.755
+Bendigo,Regional centre,1933,29131,144.266,-36.755
+Bendigo,Regional centre,1947,30779,144.266,-36.755
+Bendigo,Regional centre,1954,36918,144.266,-36.755
+Bendigo,Regional centre,1961,40335,144.266,-36.755
+Bendigo,Regional centre,1966,42208,144.266,-36.755
+Bendigo,Regional centre,1971,45936,144.266,-36.755
+Bendigo,Regional centre,1976,55152,144.266,-36.755
+Bendigo,Regional centre,1981,58818,144.266,-36.755
+Bendigo,Regional centre,1986,62380,144.266,-36.755
+Bendigo,Regional centre,1991,69583,144.266,-36.755
+Bendigo,Regional centre,1996,71356,144.266,-36.755
+Bendigo,Regional centre,2001,76312,144.266,-36.755
+Bendigo,Regional centre,2006,80804,144.266,-36.755
+Bendigo,Regional centre,2011,87340,144.266,-36.755
+Bendigo,Regional centre,2016,95934,144.266,-36.755
+Bendigo,Regional centre,2021,102940,144.266,-36.755
+Bowral - Mittagong,Regional centre,1911,1751,150.482,-34.451
+Bowral - Mittagong,Regional centre,1921,2617,150.482,-34.451
+Bowral - Mittagong,Regional centre,1933,3005,150.482,-34.451
+Bowral - Mittagong,Regional centre,1947,3660,150.482,-34.451
+Bowral - Mittagong,Regional centre,1954,3926,150.482,-34.451
+Bowral - Mittagong,Regional centre,1961,4922,150.482,-34.451
+Bowral - Mittagong,Regional centre,1966,5210,150.482,-34.451
+Bowral - Mittagong,Regional centre,1971,5903,150.482,-34.451
+Bowral - Mittagong,Regional centre,1976,6283,150.482,-34.451
+Bowral - Mittagong,Regional centre,1981,6862,150.482,-34.451
+Bowral - Mittagong,Regional centre,1986,7390,150.482,-34.451
+Bowral - Mittagong,Regional centre,1991,27228,150.482,-34.451
+Bowral - Mittagong,Regional centre,1996,30169,150.482,-34.451
+Bowral - Mittagong,Regional centre,2001,33499,150.482,-34.451
+Bowral - Mittagong,Regional centre,2006,34429,150.482,-34.451
+Bowral - Mittagong,Regional centre,2011,36266,150.482,-34.451
+Bowral - Mittagong,Regional centre,2016,38653,150.482,-34.451
+Bowral - Mittagong,Regional centre,2021,41446,150.482,-34.451
+Bunbury,Regional centre,1911,4313,115.663,-33.355
+Bunbury,Regional centre,1921,5298,115.663,-33.355
+Bunbury,Regional centre,1933,5715,115.663,-33.355
+Bunbury,Regional centre,1947,7581,115.663,-33.355
+Bunbury,Regional centre,1954,9848,115.663,-33.355
+Bunbury,Regional centre,1961,13186,115.663,-33.355
+Bunbury,Regional centre,1966,15459,115.663,-33.355
+Bunbury,Regional centre,1971,16818,115.663,-33.355
+Bunbury,Regional centre,1976,19513,115.663,-33.355
+Bunbury,Regional centre,1981,21749,115.663,-33.355
+Bunbury,Regional centre,1986,23031,115.663,-33.355
+Bunbury,Regional centre,1991,39124,115.663,-33.355
+Bunbury,Regional centre,1996,43105,115.663,-33.355
+Bunbury,Regional centre,2001,50355,115.663,-33.355
+Bunbury,Regional centre,2006,58062,115.663,-33.355
+Bunbury,Regional centre,2011,67860,115.663,-33.355
+Bunbury,Regional centre,2016,73678,115.663,-33.355
+Bunbury,Regional centre,2021,79233,115.663,-33.355
+Bundaberg,Regional centre,1911,5516,152.375,-24.86
+Bundaberg,Regional centre,1921,9276,152.375,-24.86
+Bundaberg,Regional centre,1933,11466,152.375,-24.86
+Bundaberg,Regional centre,1947,15926,152.375,-24.86
+Bundaberg,Regional centre,1954,19951,152.375,-24.86
+Bundaberg,Regional centre,1961,22839,152.375,-24.86
+Bundaberg,Regional centre,1966,25444,152.375,-24.86
+Bundaberg,Regional centre,1971,27324,152.375,-24.86
+Bundaberg,Regional centre,1976,38182,152.375,-24.86
+Bundaberg,Regional centre,1981,39738,152.375,-24.86
+Bundaberg,Regional centre,1986,43928,152.375,-24.86
+Bundaberg,Regional centre,1991,50121,152.375,-24.86
+Bundaberg,Regional centre,1996,55977,152.375,-24.86
+Bundaberg,Regional centre,2001,58111,152.375,-24.86
+Bundaberg,Regional centre,2006,64008,152.375,-24.86
+Bundaberg,Regional centre,2011,69095,152.375,-24.86
+Bundaberg,Regional centre,2016,70179,152.375,-24.86
+Bundaberg,Regional centre,2021,74413,152.375,-24.86
+Busselton,Regional centre,1911,693,115.34,-33.737
+Busselton,Regional centre,1921,610,115.34,-33.737
+Busselton,Regional centre,1933,916,115.34,-33.737
+Busselton,Regional centre,1947,1008,115.34,-33.737
+Busselton,Regional centre,1954,5265,115.34,-33.737
+Busselton,Regional centre,1961,6120,115.34,-33.737
+Busselton,Regional centre,1966,6833,115.34,-33.737
+Busselton,Regional centre,1971,7426,115.34,-33.737
+Busselton,Regional centre,1976,7897,115.34,-33.737
+Busselton,Regional centre,1981,9369,115.34,-33.737
+Busselton,Regional centre,1986,12411,115.34,-33.737
+Busselton,Regional centre,1991,14536,115.34,-33.737
+Busselton,Regional centre,1996,18278,115.34,-33.737
+Busselton,Regional centre,2001,23134,115.34,-33.737
+Busselton,Regional centre,2006,26664,115.34,-33.737
+Busselton,Regional centre,2011,31475,115.34,-33.737
+Busselton,Regional centre,2016,37690,115.34,-33.737
+Busselton,Regional centre,2021,41909,115.34,-33.737
+Cairns,Regional centre,1911,5164,145.718,-16.883
+Cairns,Regional centre,1921,7464,145.718,-16.883
+Cairns,Regional centre,1933,11993,145.718,-16.883
+Cairns,Regional centre,1947,16644,145.718,-16.883
+Cairns,Regional centre,1954,21021,145.718,-16.883
+Cairns,Regional centre,1961,25204,145.718,-16.883
+Cairns,Regional centre,1966,29326,145.718,-16.883
+Cairns,Regional centre,1971,32747,145.718,-16.883
+Cairns,Regional centre,1976,48753,145.718,-16.883
+Cairns,Regional centre,1981,62426,145.718,-16.883
+Cairns,Regional centre,1986,78610,145.718,-16.883
+Cairns,Regional centre,1991,81820,145.718,-16.883
+Cairns,Regional centre,1996,100282,145.718,-16.883
+Cairns,Regional centre,2001,105373,145.718,-16.883
+Cairns,Regional centre,2006,121276,145.718,-16.883
+Cairns,Regional centre,2011,139212,145.718,-16.883
+Cairns,Regional centre,2016,149182,145.718,-16.883
+Cairns,Regional centre,2021,155574,145.718,-16.883
+Coffs Harbour,Regional centre,1961,14516,153.148,-30.055
+Coffs Harbour,Regional centre,1966,15067,153.148,-30.055
+Coffs Harbour,Regional centre,1971,18633,153.148,-30.055
+Coffs Harbour,Regional centre,1976,24497,153.148,-30.055
+Coffs Harbour,Regional centre,1981,35170,153.148,-30.055
+Coffs Harbour,Regional centre,1986,43010,153.148,-30.055
+Coffs Harbour,Regional centre,1991,47919,153.148,-30.055
+Coffs Harbour,Regional centre,1996,54247,153.148,-30.055
+Coffs Harbour,Regional centre,2001,58374,153.148,-30.055
+Coffs Harbour,Regional centre,2006,62378,153.148,-30.055
+Coffs Harbour,Regional centre,2011,66689,153.148,-30.055
+Coffs Harbour,Regional centre,2016,70106,153.148,-30.055
+Coffs Harbour,Regional centre,2021,74219,153.148,-30.055
+Devonport,Regional centre,1911,4859,146.52,-41.298
+Devonport,Regional centre,1921,6180,146.52,-41.298
+Devonport,Regional centre,1933,6577,146.52,-41.298
+Devonport,Regional centre,1947,9100,146.52,-41.298
+Devonport,Regional centre,1954,11827,146.52,-41.298
+Devonport,Regional centre,1961,14276,146.52,-41.298
+Devonport,Regional centre,1966,16757,146.52,-41.298
+Devonport,Regional centre,1971,18183,146.52,-41.298
+Devonport,Regional centre,1976,21423,146.52,-41.298
+Devonport,Regional centre,1981,23162,146.52,-41.298
+Devonport,Regional centre,1986,24417,146.52,-41.298
+Devonport,Regional centre,1991,28343,146.52,-41.298
+Devonport,Regional centre,1996,28817,146.52,-41.298
+Devonport,Regional centre,2001,28443,146.52,-41.298
+Devonport,Regional centre,2006,28982,146.52,-41.298
+Devonport,Regional centre,2011,30392,146.52,-41.298
+Devonport,Regional centre,2016,29900,146.52,-41.298
+Devonport,Regional centre,2021,32581,146.52,-41.298
+Dubbo,Regional centre,1911,4452,148.621,-32.24
+Dubbo,Regional centre,1921,5031,148.621,-32.24
+Dubbo,Regional centre,1933,8344,148.621,-32.24
+Dubbo,Regional centre,1947,9545,148.621,-32.24
+Dubbo,Regional centre,1954,12209,148.621,-32.24
+Dubbo,Regional centre,1961,14118,148.621,-32.24
+Dubbo,Regional centre,1966,15629,148.621,-32.24
+Dubbo,Regional centre,1971,17810,148.621,-32.24
+Dubbo,Regional centre,1976,20149,148.621,-32.24
+Dubbo,Regional centre,1981,23986,148.621,-32.24
+Dubbo,Regional centre,1986,25796,148.621,-32.24
+Dubbo,Regional centre,1991,28838,148.621,-32.24
+Dubbo,Regional centre,1996,31379,148.621,-32.24
+Dubbo,Regional centre,2001,33419,148.621,-32.24
+Dubbo,Regional centre,2006,33694,148.621,-32.24
+Dubbo,Regional centre,2011,35281,148.621,-32.24
+Dubbo,Regional centre,2016,37118,148.621,-32.24
+Dubbo,Regional centre,2021,41026,148.621,-32.24
+Geelong,Regional centre,1911,26554,144.367,-37.959
+Geelong,Regional centre,1921,31686,144.367,-37.959
+Geelong,Regional centre,1933,39223,144.367,-37.959
+Geelong,Regional centre,1947,44561,144.367,-37.959
+Geelong,Regional centre,1954,72349,144.367,-37.959
+Geelong,Regional centre,1961,91790,144.367,-37.959
+Geelong,Regional centre,1966,105059,144.367,-37.959
+Geelong,Regional centre,1971,122087,144.367,-37.959
+Geelong,Regional centre,1976,131636,144.367,-37.959
+Geelong,Regional centre,1981,137173,144.367,-37.959
+Geelong,Regional centre,1986,146371,144.367,-37.959
+Geelong,Regional centre,1991,154133,144.367,-37.959
+Geelong,Regional centre,1996,154225,144.367,-37.959
+Geelong,Regional centre,2001,199732,144.367,-37.959
+Geelong,Regional centre,2006,210899,144.367,-37.959
+Geelong,Regional centre,2011,227957,144.367,-37.959
+Geelong,Regional centre,2016,254296,144.367,-37.959
+Geelong,Regional centre,2021,289566,144.367,-37.959
+Geraldton,Regional centre,1911,4114,114.656,-28.733
+Geraldton,Regional centre,1921,4793,114.656,-28.733
+Geraldton,Regional centre,1933,5843,114.656,-28.733
+Geraldton,Regional centre,1947,7005,114.656,-28.733
+Geraldton,Regional centre,1954,9679,114.656,-28.733
+Geraldton,Regional centre,1961,10894,114.656,-28.733
+Geraldton,Regional centre,1966,12196,114.656,-28.733
+Geraldton,Regional centre,1971,15457,114.656,-28.733
+Geraldton,Regional centre,1976,18773,114.656,-28.733
+Geraldton,Regional centre,1981,20895,114.656,-28.733
+Geraldton,Regional centre,1986,21726,114.656,-28.733
+Geraldton,Regional centre,1991,28688,114.656,-28.733
+Geraldton,Regional centre,1996,30401,114.656,-28.733
+Geraldton,Regional centre,2001,32124,114.656,-28.733
+Geraldton,Regional centre,2006,33894,114.656,-28.733
+Geraldton,Regional centre,2011,36884,114.656,-28.733
+Geraldton,Regional centre,2016,38369,114.656,-28.733
+Geraldton,Regional centre,2021,40264,114.656,-28.733
+Gladstone - Tannum Sands,Regional centre,1911,1364,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1921,2128,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1933,3039,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1947,5244,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1954,6943,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1961,7181,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1966,12426,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1971,15574,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1976,18948,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1981,22712,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1986,29871,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1991,30188,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,1996,33026,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,2001,34129,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,2006,38763,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,2011,43166,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,2016,44954,151.29,-23.904
+Gladstone - Tannum Sands,Regional centre,2021,45754,151.29,-23.904
+Gold Coast - Tweed Heads,Regional centre,1961,33716,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,1966,53183,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,1971,74240,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,1976,116195,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,1981,177264,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,1986,215568,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,1991,288124,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,1996,364572,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,2001,433224,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,2006,509972,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,2011,581036,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,2016,645711,153.404,-28.167
+Gold Coast - Tweed Heads,Regional centre,2021,701928,153.404,-28.167
+Hervey Bay,Regional centre,1954,3544,152.815,-25.281
+Hervey Bay,Regional centre,1961,4191,152.815,-25.281
+Hervey Bay,Regional centre,1971,6170,152.815,-25.281
+Hervey Bay,Regional centre,1976,10304,152.815,-25.281
+Hervey Bay,Regional centre,1981,16402,152.815,-25.281
+Hervey Bay,Regional centre,1986,20660,152.815,-25.281
+Hervey Bay,Regional centre,1991,21579,152.815,-25.281
+Hervey Bay,Regional centre,1996,30721,152.815,-25.281
+Hervey Bay,Regional centre,2001,34110,152.815,-25.281
+Hervey Bay,Regional centre,2006,42706,152.815,-25.281
+Hervey Bay,Regional centre,2011,49835,152.815,-25.281
+Hervey Bay,Regional centre,2016,53016,152.815,-25.281
+Hervey Bay,Regional centre,2021,58228,152.815,-25.281
+Kalgoorlie - Boulder,Regional centre,1911,19605,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1921,19210,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1933,17326,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1947,22376,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1954,22834,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1961,21773,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1966,19908,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1971,20865,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1976,19041,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1981,19898,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1986,23404,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1991,26281,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,1996,29566,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,2001,29502,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,2006,29893,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,2011,31933,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,2016,30652,121.456,-30.749
+Kalgoorlie - Boulder,Regional centre,2021,30421,121.456,-30.749
+Launceston,Regional centre,1911,20754,147.055,-41.453
+Launceston,Regional centre,1921,24305,147.055,-41.453
+Launceston,Regional centre,1933,32833,147.055,-41.453
+Launceston,Regional centre,1947,40449,147.055,-41.453
+Launceston,Regional centre,1954,49310,147.055,-41.453
+Launceston,Regional centre,1961,56721,147.055,-41.453
+Launceston,Regional centre,1966,60456,147.055,-41.453
+Launceston,Regional centre,1971,62241,147.055,-41.453
+Launceston,Regional centre,1976,81636,147.055,-41.453
+Launceston,Regional centre,1981,84784,147.055,-41.453
+Launceston,Regional centre,1986,91061,147.055,-41.453
+Launceston,Regional centre,1991,76479,147.055,-41.453
+Launceston,Regional centre,1996,78663,147.055,-41.453
+Launceston,Regional centre,2001,79379,147.055,-41.453
+Launceston,Regional centre,2006,82395,147.055,-41.453
+Launceston,Regional centre,2011,86051,147.055,-41.453
+Launceston,Regional centre,2016,85732,147.055,-41.453
+Launceston,Regional centre,2021,93192,147.055,-41.453
+Lismore,Regional centre,1911,7381,153.295,-28.817
+Lismore,Regional centre,1921,8700,153.295,-28.817
+Lismore,Regional centre,1933,11762,153.295,-28.817
+Lismore,Regional centre,1947,15214,153.295,-28.817
+Lismore,Regional centre,1954,18312,153.295,-28.817
+Lismore,Regional centre,1961,18935,153.295,-28.817
+Lismore,Regional centre,1966,19734,153.295,-28.817
+Lismore,Regional centre,1971,20904,153.295,-28.817
+Lismore,Regional centre,1976,22082,153.295,-28.817
+Lismore,Regional centre,1981,24033,153.295,-28.817
+Lismore,Regional centre,1986,24896,153.295,-28.817
+Lismore,Regional centre,1991,28602,153.295,-28.817
+Lismore,Regional centre,1996,29272,153.295,-28.817
+Lismore,Regional centre,2001,28715,153.295,-28.817
+Lismore,Regional centre,2006,28790,153.295,-28.817
+Lismore,Regional centre,2011,29294,153.295,-28.817
+Lismore,Regional centre,2016,29016,153.295,-28.817
+Lismore,Regional centre,2021,28859,153.295,-28.817
+Mackay,Regional centre,1911,5141,149.165,-21.089
+Mackay,Regional centre,1921,6313,149.165,-21.089
+Mackay,Regional centre,1933,10665,149.165,-21.089
+Mackay,Regional centre,1947,13486,149.165,-21.089
+Mackay,Regional centre,1954,14762,149.165,-21.089
+Mackay,Regional centre,1961,16809,149.165,-21.089
+Mackay,Regional centre,1966,18640,149.165,-21.089
+Mackay,Regional centre,1971,19148,149.165,-21.089
+Mackay,Regional centre,1976,39500,149.165,-21.089
+Mackay,Regional centre,1981,45551,149.165,-21.089
+Mackay,Regional centre,1986,48725,149.165,-21.089
+Mackay,Regional centre,1991,52201,149.165,-21.089
+Mackay,Regional centre,1996,58026,149.165,-21.089
+Mackay,Regional centre,2001,60722,149.165,-21.089
+Mackay,Regional centre,2006,71354,149.165,-21.089
+Mackay,Regional centre,2011,79683,149.165,-21.089
+Mackay,Regional centre,2016,80411,149.165,-21.089
+Mackay,Regional centre,2021,85408,149.165,-21.089
+Mildura - Wentworth,Regional centre,1921,13183,142.076,-34.142
+Mildura - Wentworth,Regional centre,1933,26370,142.076,-34.142
+Mildura - Wentworth,Regional centre,1947,25238,142.076,-34.142
+Mildura - Wentworth,Regional centre,1954,26699,142.076,-34.142
+Mildura - Wentworth,Regional centre,1961,28619,142.076,-34.142
+Mildura - Wentworth,Regional centre,1966,29249,142.076,-34.142
+Mildura - Wentworth,Regional centre,1971,29893,142.076,-34.142
+Mildura - Wentworth,Regional centre,1976,32002,142.076,-34.142
+Mildura - Wentworth,Regional centre,1981,34631,142.076,-34.142
+Mildura - Wentworth,Regional centre,1986,35843,142.076,-34.142
+Mildura - Wentworth,Regional centre,1991,39373,142.076,-34.142
+Mildura - Wentworth,Regional centre,1996,41208,142.076,-34.142
+Mildura - Wentworth,Regional centre,2001,44593,142.076,-34.142
+Mildura - Wentworth,Regional centre,2006,46763,142.076,-34.142
+Mildura - Wentworth,Regional centre,2011,48505,142.076,-34.142
+Mildura - Wentworth,Regional centre,2016,51051,142.076,-34.142
+Mildura - Wentworth,Regional centre,2021,53675,142.076,-34.142
+Mount Gambier,Regional centre,1911,7860,140.754,-37.816
+Mount Gambier,Regional centre,1921,9034,140.754,-37.816
+Mount Gambier,Regional centre,1933,9537,140.754,-37.816
+Mount Gambier,Regional centre,1947,10749,140.754,-37.816
+Mount Gambier,Regional centre,1954,14006,140.754,-37.816
+Mount Gambier,Regional centre,1961,19458,140.754,-37.816
+Mount Gambier,Regional centre,1966,22614,140.754,-37.816
+Mount Gambier,Regional centre,1971,23198,140.754,-37.816
+Mount Gambier,Regional centre,1976,23545,140.754,-37.816
+Mount Gambier,Regional centre,1981,24622,140.754,-37.816
+Mount Gambier,Regional centre,1986,25858,140.754,-37.816
+Mount Gambier,Regional centre,1991,24672,140.754,-37.816
+Mount Gambier,Regional centre,1996,25719,140.754,-37.816
+Mount Gambier,Regional centre,2001,25999,140.754,-37.816
+Mount Gambier,Regional centre,2006,26974,140.754,-37.816
+Mount Gambier,Regional centre,2011,28279,140.754,-37.816
+Mount Gambier,Regional centre,2016,29532,140.754,-37.816
+Mount Gambier,Regional centre,2021,30270,140.754,-37.816
+Newcastle - Maitland,Regional centre,1911,51942,151.523,-32.696
+Newcastle - Maitland,Regional centre,1921,84372,151.523,-32.696
+Newcastle - Maitland,Regional centre,1933,104485,151.523,-32.696
+Newcastle - Maitland,Regional centre,1947,127138,151.523,-32.696
+Newcastle - Maitland,Regional centre,1954,178156,151.523,-32.696
+Newcastle - Maitland,Regional centre,1961,208641,151.523,-32.696
+Newcastle - Maitland,Regional centre,1966,233936,151.523,-32.696
+Newcastle - Maitland,Regional centre,1971,274883,151.523,-32.696
+Newcastle - Maitland,Regional centre,1976,287162,151.523,-32.696
+Newcastle - Maitland,Regional centre,1981,297837,151.523,-32.696
+Newcastle - Maitland,Regional centre,1986,299030,151.523,-32.696
+Newcastle - Maitland,Regional centre,1991,352184,151.523,-32.696
+Newcastle - Maitland,Regional centre,1996,361868,151.523,-32.696
+Newcastle - Maitland,Regional centre,2001,412810,151.523,-32.696
+Newcastle - Maitland,Regional centre,2006,426711,151.523,-32.696
+Newcastle - Maitland,Regional centre,2011,453265,151.523,-32.696
+Newcastle - Maitland,Regional centre,2016,475716,151.523,-32.696
+Newcastle - Maitland,Regional centre,2021,510175,151.523,-32.696
+Nowra - Bomaderry,Regional centre,1911,1884,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1921,2200,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1933,2978,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1947,3551,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1954,5981,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1961,6221,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1966,9633,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1971,12873,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1976,15496,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1981,17887,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1986,19553,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1991,26493,150.598,-34.869
+Nowra - Bomaderry,Regional centre,1996,28829,150.598,-34.869
+Nowra - Bomaderry,Regional centre,2001,30097,150.598,-34.869
+Nowra - Bomaderry,Regional centre,2006,31902,150.598,-34.869
+Nowra - Bomaderry,Regional centre,2011,34604,150.598,-34.869
+Nowra - Bomaderry,Regional centre,2016,36790,150.598,-34.869
+Nowra - Bomaderry,Regional centre,2021,38955,150.598,-34.869
+Orange,Regional centre,1911,6721,149.103,-33.27
+Orange,Regional centre,1921,7399,149.103,-33.27
+Orange,Regional centre,1933,9634,149.103,-33.27
+Orange,Regional centre,1947,13780,149.103,-33.27
+Orange,Regional centre,1954,18247,149.103,-33.27
+Orange,Regional centre,1961,18977,149.103,-33.27
+Orange,Regional centre,1966,20996,149.103,-33.27
+Orange,Regional centre,1971,24185,149.103,-33.27
+Orange,Regional centre,1976,28690,149.103,-33.27
+Orange,Regional centre,1981,30351,149.103,-33.27
+Orange,Regional centre,1986,31710,149.103,-33.27
+Orange,Regional centre,1991,32756,149.103,-33.27
+Orange,Regional centre,1996,33584,149.103,-33.27
+Orange,Regional centre,2001,35324,149.103,-33.27
+Orange,Regional centre,2006,34889,149.103,-33.27
+Orange,Regional centre,2011,37785,149.103,-33.27
+Orange,Regional centre,2016,39586,149.103,-33.27
+Orange,Regional centre,2021,42165,149.103,-33.27
+Port Macquarie,Regional centre,1911,1119,152.899,-31.458
+Port Macquarie,Regional centre,1921,1563,152.899,-31.458
+Port Macquarie,Regional centre,1933,1727,152.899,-31.458
+Port Macquarie,Regional centre,1947,2905,152.899,-31.458
+Port Macquarie,Regional centre,1954,4423,152.899,-31.458
+Port Macquarie,Regional centre,1961,5952,152.899,-31.458
+Port Macquarie,Regional centre,1966,7072,152.899,-31.458
+Port Macquarie,Regional centre,1971,9448,152.899,-31.458
+Port Macquarie,Regional centre,1976,11811,152.899,-31.458
+Port Macquarie,Regional centre,1981,13362,152.899,-31.458
+Port Macquarie,Regional centre,1986,19586,152.899,-31.458
+Port Macquarie,Regional centre,1991,26938,152.899,-31.458
+Port Macquarie,Regional centre,1996,32189,152.899,-31.458
+Port Macquarie,Regional centre,2001,37204,152.899,-31.458
+Port Macquarie,Regional centre,2006,39842,152.899,-31.458
+Port Macquarie,Regional centre,2011,43275,152.899,-31.458
+Port Macquarie,Regional centre,2016,46376,152.899,-31.458
+Port Macquarie,Regional centre,2021,50140,152.899,-31.458
+Queanbeyan,Regional centre,1911,1273,149.226,-35.35
+Queanbeyan,Regional centre,1921,1824,149.226,-35.35
+Queanbeyan,Regional centre,1933,4019,149.226,-35.35
+Queanbeyan,Regional centre,1947,5033,149.226,-35.35
+Queanbeyan,Regional centre,1954,7307,149.226,-35.35
+Queanbeyan,Regional centre,1961,9448,149.226,-35.35
+Queanbeyan,Regional centre,1966,12515,149.226,-35.35
+Queanbeyan,Regional centre,1971,16058,149.226,-35.35
+Queanbeyan,Regional centre,1976,18923,149.226,-35.35
+Queanbeyan,Regional centre,1981,19383,149.226,-35.35
+Queanbeyan,Regional centre,1986,22698,149.226,-35.35
+Queanbeyan,Regional centre,1991,23354,149.226,-35.35
+Queanbeyan,Regional centre,1996,26545,149.226,-35.35
+Queanbeyan,Regional centre,2001,31148,149.226,-35.35
+Queanbeyan,Regional centre,2006,34652,149.226,-35.35
+Queanbeyan,Regional centre,2011,36972,149.226,-35.35
+Queanbeyan,Regional centre,2016,36867,149.226,-35.35
+Queanbeyan,Regional centre,2021,36719,149.226,-35.35
+Rockhampton,Regional centre,1911,15456,150.483,-23.269
+Rockhampton,Regional centre,1921,24168,150.483,-23.269
+Rockhampton,Regional centre,1933,29369,150.483,-23.269
+Rockhampton,Regional centre,1947,34988,150.483,-23.269
+Rockhampton,Regional centre,1954,40676,150.483,-23.269
+Rockhampton,Regional centre,1961,44128,150.483,-23.269
+Rockhampton,Regional centre,1966,45376,150.483,-23.269
+Rockhampton,Regional centre,1971,48213,150.483,-23.269
+Rockhampton,Regional centre,1976,51669,150.483,-23.269
+Rockhampton,Regional centre,1981,53646,150.483,-23.269
+Rockhampton,Regional centre,1986,59056,150.483,-23.269
+Rockhampton,Regional centre,1991,66100,150.483,-23.269
+Rockhampton,Regional centre,1996,67531,150.483,-23.269
+Rockhampton,Regional centre,2001,66303,150.483,-23.269
+Rockhampton,Regional centre,2006,70862,150.483,-23.269
+Rockhampton,Regional centre,2011,75730,150.483,-23.269
+Rockhampton,Regional centre,2016,78598,150.483,-23.269
+Rockhampton,Regional centre,2021,80216,150.483,-23.269
+Shepparton - Mooroopna,Regional centre,1911,6099,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1921,7714,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1933,11227,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1947,13192,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1954,16224,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1961,19693,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1966,23670,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1971,25887,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1976,31160,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1981,34695,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1986,37086,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1991,38158,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,1996,39717,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,2001,42835,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,2006,44096,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,2011,47571,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,2016,50708,145.403,-36.399
+Shepparton - Mooroopna,Regional centre,2021,53986,145.403,-36.399
+Sunshine Coast,Regional centre,1981,74014,152.931,-26.345
+Sunshine Coast,Regional centre,1986,90096,152.931,-26.345
+Sunshine Coast,Regional centre,1991,140950,152.931,-26.345
+Sunshine Coast,Regional centre,1996,182194,152.931,-26.345
+Sunshine Coast,Regional centre,2001,213217,152.931,-26.345
+Sunshine Coast,Regional centre,2006,251703,152.931,-26.345
+Sunshine Coast,Regional centre,2011,281005,152.931,-26.345
+Sunshine Coast,Regional centre,2016,316905,152.931,-26.345
+Sunshine Coast,Regional centre,2021,387472,152.931,-26.345
+Tamworth,Regional centre,1911,7145,150.952,-31.138
+Tamworth,Regional centre,1921,7264,150.952,-31.138
+Tamworth,Regional centre,1933,9913,150.952,-31.138
+Tamworth,Regional centre,1947,12071,150.952,-31.138
+Tamworth,Regional centre,1954,15701,150.952,-31.138
+Tamworth,Regional centre,1961,18984,150.952,-31.138
+Tamworth,Regional centre,1966,21680,150.952,-31.138
+Tamworth,Regional centre,1971,24092,150.952,-31.138
+Tamworth,Regional centre,1976,29395,150.952,-31.138
+Tamworth,Regional centre,1981,31779,150.952,-31.138
+Tamworth,Regional centre,1986,33321,150.952,-31.138
+Tamworth,Regional centre,1991,35939,150.952,-31.138
+Tamworth,Regional centre,1996,35822,150.952,-31.138
+Tamworth,Regional centre,2001,37012,150.952,-31.138
+Tamworth,Regional centre,2006,37890,150.952,-31.138
+Tamworth,Regional centre,2011,40085,150.952,-31.138
+Tamworth,Regional centre,2016,41986,150.952,-31.138
+Tamworth,Regional centre,2021,44368,150.952,-31.138
+Toowoomba,Regional centre,1911,13119,151.898,-27.563
+Toowoomba,Regional centre,1921,20676,151.898,-27.563
+Toowoomba,Regional centre,1933,26423,151.898,-27.563
+Toowoomba,Regional centre,1947,33290,151.898,-27.563
+Toowoomba,Regional centre,1954,43152,151.898,-27.563
+Toowoomba,Regional centre,1961,50134,151.898,-27.563
+Toowoomba,Regional centre,1966,52139,151.898,-27.563
+Toowoomba,Regional centre,1971,59524,151.898,-27.563
+Toowoomba,Regional centre,1976,66436,151.898,-27.563
+Toowoomba,Regional centre,1981,66698,151.898,-27.563
+Toowoomba,Regional centre,1986,71362,151.898,-27.563
+Toowoomba,Regional centre,1991,90385,151.898,-27.563
+Toowoomba,Regional centre,1996,93606,151.898,-27.563
+Toowoomba,Regional centre,2001,107975,151.898,-27.563
+Toowoomba,Regional centre,2006,118145,151.898,-27.563
+Toowoomba,Regional centre,2011,126426,151.898,-27.563
+Toowoomba,Regional centre,2016,133654,151.898,-27.563
+Toowoomba,Regional centre,2021,143942,151.898,-27.563
+Townsville,Regional centre,1911,10636,146.719,-19.315
+Townsville,Regional centre,1921,21353,146.719,-19.315
+Townsville,Regional centre,1933,25876,146.719,-19.315
+Townsville,Regional centre,1947,34109,146.719,-19.315
+Townsville,Regional centre,1954,40485,146.719,-19.315
+Townsville,Regional centre,1961,51143,146.719,-19.315
+Townsville,Regional centre,1966,56768,146.719,-19.315
+Townsville,Regional centre,1971,68591,146.719,-19.315
+Townsville,Regional centre,1976,88401,146.719,-19.315
+Townsville,Regional centre,1981,94604,146.719,-19.315
+Townsville,Regional centre,1986,105032,146.719,-19.315
+Townsville,Regional centre,1991,113242,146.719,-19.315
+Townsville,Regional centre,1996,120755,146.719,-19.315
+Townsville,Regional centre,2001,131018,146.719,-19.315
+Townsville,Regional centre,2006,147714,146.719,-19.315
+Townsville,Regional centre,2011,167561,146.719,-19.315
+Townsville,Regional centre,2016,178244,146.719,-19.315
+Townsville,Regional centre,2021,181609,146.719,-19.315
+Traralgon - Morwell,Regional centre,1911,2854,146.513,-38.205
+Traralgon - Morwell,Regional centre,1921,3336,146.513,-38.205
+Traralgon - Morwell,Regional centre,1933,3517,146.513,-38.205
+Traralgon - Morwell,Regional centre,1947,5396,146.513,-38.205
+Traralgon - Morwell,Regional centre,1954,10036,146.513,-38.205
+Traralgon - Morwell,Regional centre,1961,13529,146.513,-38.205
+Traralgon - Morwell,Regional centre,1966,15343,146.513,-38.205
+Traralgon - Morwell,Regional centre,1971,16002,146.513,-38.205
+Traralgon - Morwell,Regional centre,1976,16864,146.513,-38.205
+Traralgon - Morwell,Regional centre,1981,21381,146.513,-38.205
+Traralgon - Morwell,Regional centre,1986,23461,146.513,-38.205
+Traralgon - Morwell,Regional centre,1991,38398,146.513,-38.205
+Traralgon - Morwell,Regional centre,1996,36130,146.513,-38.205
+Traralgon - Morwell,Regional centre,2001,36365,146.513,-38.205
+Traralgon - Morwell,Regional centre,2006,37780,146.513,-38.205
+Traralgon - Morwell,Regional centre,2011,40609,146.513,-38.205
+Traralgon - Morwell,Regional centre,2016,41385,146.513,-38.205
+Traralgon - Morwell,Regional centre,2021,43144,146.513,-38.205
+Wagga Wagga,Regional centre,1911,6419,147.374,-35.138
+Wagga Wagga,Regional centre,1921,7679,147.374,-35.138
+Wagga Wagga,Regional centre,1933,11631,147.374,-35.138
+Wagga Wagga,Regional centre,1947,15340,147.374,-35.138
+Wagga Wagga,Regional centre,1954,19235,147.374,-35.138
+Wagga Wagga,Regional centre,1961,22092,147.374,-35.138
+Wagga Wagga,Regional centre,1966,25819,147.374,-35.138
+Wagga Wagga,Regional centre,1971,28905,147.374,-35.138
+Wagga Wagga,Regional centre,1976,32984,147.374,-35.138
+Wagga Wagga,Regional centre,1981,36837,147.374,-35.138
+Wagga Wagga,Regional centre,1986,37577,147.374,-35.138
+Wagga Wagga,Regional centre,1991,46267,147.374,-35.138
+Wagga Wagga,Regional centre,1996,48160,147.374,-35.138
+Wagga Wagga,Regional centre,2001,49075,147.374,-35.138
+Wagga Wagga,Regional centre,2006,51356,147.374,-35.138
+Wagga Wagga,Regional centre,2011,54137,147.374,-35.138
+Wagga Wagga,Regional centre,2016,55800,147.374,-35.138
+Wagga Wagga,Regional centre,2021,57260,147.374,-35.138
+Warragul - Drouin,Regional centre,1911,4454,145.871,-38.191
+Warragul - Drouin,Regional centre,1921,4954,145.871,-38.191
+Warragul - Drouin,Regional centre,1933,5809,145.871,-38.191
+Warragul - Drouin,Regional centre,1947,6727,145.871,-38.191
+Warragul - Drouin,Regional centre,1954,8603,145.871,-38.191
+Warragul - Drouin,Regional centre,1961,9584,145.871,-38.191
+Warragul - Drouin,Regional centre,1966,9928,145.871,-38.191
+Warragul - Drouin,Regional centre,1971,10010,145.871,-38.191
+Warragul - Drouin,Regional centre,1976,10377,145.871,-38.191
+Warragul - Drouin,Regional centre,1981,10892,145.871,-38.191
+Warragul - Drouin,Regional centre,1986,12924,145.871,-38.191
+Warragul - Drouin,Regional centre,1991,22142,145.871,-38.191
+Warragul - Drouin,Regional centre,1996,22750,145.871,-38.191
+Warragul - Drouin,Regional centre,2001,24085,145.871,-38.191
+Warragul - Drouin,Regional centre,2006,26009,145.871,-38.191
+Warragul - Drouin,Regional centre,2011,30287,145.871,-38.191
+Warragul - Drouin,Regional centre,2016,35523,145.871,-38.191
+Warragul - Drouin,Regional centre,2021,42898,145.871,-38.191
+Warrnambool,Regional centre,1911,15663,142.559,-38.387
+Warrnambool,Regional centre,1921,15974,142.559,-38.387
+Warrnambool,Regional centre,1933,17509,142.559,-38.387
+Warrnambool,Regional centre,1947,18167,142.559,-38.387
+Warrnambool,Regional centre,1954,12502,142.559,-38.387
+Warrnambool,Regional centre,1961,15702,142.559,-38.387
+Warrnambool,Regional centre,1966,17499,142.559,-38.387
+Warrnambool,Regional centre,1971,18684,142.559,-38.387
+Warrnambool,Regional centre,1976,20792,142.559,-38.387
+Warrnambool,Regional centre,1981,21414,142.559,-38.387
+Warrnambool,Regional centre,1986,22706,142.559,-38.387
+Warrnambool,Regional centre,1991,26471,142.559,-38.387
+Warrnambool,Regional centre,1996,28301,142.559,-38.387
+Warrnambool,Regional centre,2001,29559,142.559,-38.387
+Warrnambool,Regional centre,2006,31320,142.559,-38.387
+Warrnambool,Regional centre,2011,33020,142.559,-38.387
+Warrnambool,Regional centre,2016,34615,142.559,-38.387
+Warrnambool,Regional centre,2021,35768,142.559,-38.387
+Wollongong,Regional centre,1911,4660,150.85,-34.438
+Wollongong,Regional centre,1921,6708,150.85,-34.438
+Wollongong,Regional centre,1933,11403,150.85,-34.438
+Wollongong,Regional centre,1947,18116,150.85,-34.438
+Wollongong,Regional centre,1954,90829,150.85,-34.438
+Wollongong,Regional centre,1961,128360,150.85,-34.438
+Wollongong,Regional centre,1966,162153,150.85,-34.438
+Wollongong,Regional centre,1971,199048,150.85,-34.438
+Wollongong,Regional centre,1976,211068,150.85,-34.438
+Wollongong,Regional centre,1981,222539,150.85,-34.438
+Wollongong,Regional centre,1986,225178,150.85,-34.438
+Wollongong,Regional centre,1991,239604,150.85,-34.438
+Wollongong,Regional centre,1996,249100,150.85,-34.438
+Wollongong,Regional centre,2001,260655,150.85,-34.438
+Wollongong,Regional centre,2006,265898,150.85,-34.438
+Wollongong,Regional centre,2011,281700,150.85,-34.438
+Wollongong,Regional centre,2016,294784,150.85,-34.438
+Wollongong,Regional centre,2021,305976,150.85,-34.438

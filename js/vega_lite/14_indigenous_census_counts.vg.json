@@ -1,0 +1,113 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bar chart: number of people identifying as Aboriginal and/or Torres Strait Islander at each Census from 1971 to 2021, annotated with the 1967 referendum.",
+  "width": "container",
+  "height": 340,
+  "data": {
+    "url": "data/indigenous_census_counts.csv",
+    "format": {"type": "csv", "parse": {"year": "number", "census_count": "number"}}
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "axis": {"labelAngle": 0, "domain": false, "ticks": false, "labelPadding": 6}
+    },
+    "y": {
+      "field": "census_count",
+      "type": "quantitative",
+      "title": null,
+      "scale": {"domain": [0, 900000]},
+      "axis": {
+        "values": [0, 200000, 400000, 600000, 800000],
+        "format": ",",
+        "domain": false,
+        "ticks": false,
+        "labelExpr": "format(datum.value, ',')"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#e09f1f",
+        "width": {"band": 0.62},
+        "cornerRadiusTopLeft": 3,
+        "cornerRadiusTopRight": 3
+      },
+      "encoding": {
+        "color": {"condition": {"test": "datum.year == 2021", "value": "#b8740a"}, "value": "#e8b65a"},
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Census"},
+          {"field": "census_count", "type": "quantitative", "title": "People counted", "format": ","}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.year == 1971 || datum.year == 1996 || datum.year == 2016 || datum.year == 2021"}],
+      "mark": {"type": "text", "dy": -8, "fontSize": 12, "fontWeight": 700, "color": "#1f2933"},
+      "encoding": {"text": {"field": "census_count", "type": "quantitative", "format": ","}}
+    },
+    {
+      "data": {"values": [{"year": 2016, "y": 760000, "label": "+25% in five years"}]},
+      "mark": {"type": "text", "fontSize": 12, "fontStyle": "italic", "color": "#4a5563", "align": "right", "dx": 10},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "axis": {
+            "labelExpr": "format(datum.value, ',')",
+            "values": [0, 200000, 400000, 600000, 800000],
+            "domain": false,
+            "ticks": false
+          },
+          "title": null
+        },
+        "text": {"field": "label"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": 1971,
+            "y": 520000,
+            "label": [
+              "1967 referendum: 90.77% vote Yes to remove",
+              "section 127, which had excluded Aboriginal",
+              "people from official population counts.",
+              "1971 was the first Census after the change."
+            ]
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "align": "left",
+        "dx": -14,
+        "baseline": "top",
+        "lineHeight": 16,
+        "color": "#1f2933"
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "axis": {
+            "labelExpr": "format(datum.value, ',')",
+            "values": [0, 200000, 400000, 600000, 800000],
+            "domain": false,
+            "ticks": false
+          },
+          "title": null
+        },
+        "text": {"field": "label"}
+      }
+    }
+  ]
+}

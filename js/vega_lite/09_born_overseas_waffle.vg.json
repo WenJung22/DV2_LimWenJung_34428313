@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Waffle charts (small multiples): share of the population born overseas in 1901, 1947 and 2021. Each square is one per cent of the population.",
+  "data": {
+    "url": "data/birthplace_share.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "total": "number",
+        "australia_born": "number",
+        "overseas_born": "number",
+        "overseas_pct": "number"
+      }
+    }
+  },
+  "transform": [
+    {"filter": {"field": "year", "oneOf": [1901, 1947, 2021]}},
+    {"calculate": "round(datum.overseas_pct)", "as": "filled"},
+    {"calculate": "datum.year + ' · ' + format(datum.overseas_pct, '.1f') + '% born overseas'", "as": "panel"},
+    {"calculate": "sequence(0, 100)", "as": "cells"},
+    {"flatten": ["cells"], "as": ["cell"]},
+    {"calculate": "datum.cell % 10", "as": "col"},
+    {"calculate": "floor(datum.cell / 10)", "as": "row"},
+    {"calculate": "datum.cell < datum.filled ? 'Born overseas' : 'Born in Australia'", "as": "status"}
+  ],
+  "facet": {
+    "column": {
+      "field": "panel",
+      "type": "nominal",
+      "title": null,
+      "sort": {"field": "year"},
+      "header": {
+        "labelFontSize": 15,
+        "labelFontWeight": 700,
+        "labelColor": "#1f2933",
+        "labelOrient": "bottom",
+        "labelPadding": 10
+      }
+    }
+  },
+  "spacing": 40,
+  "spec": {
+    "width": 170,
+    "height": 170,
+    "mark": {"type": "square", "size": 170, "opacity": 1},
+    "encoding": {
+      "x": {"field": "col", "type": "ordinal", "axis": null},
+      "y": {"field": "row", "type": "ordinal", "axis": null},
+      "color": {
+        "field": "status",
+        "type": "nominal",
+        "scale": {"domain": ["Born overseas", "Born in Australia"], "range": ["#d2553a", "#e3dccf"]},
+        "legend": null
+      },
+      "tooltip": [
+        {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+        {"field": "overseas_pct", "type": "quantitative", "title": "Born overseas (%)", "format": ".1f"},
+        {"field": "overseas_born", "type": "quantitative", "title": "People born overseas", "format": ","},
+        {"field": "total", "type": "quantitative", "title": "Total population", "format": ","},
+        {"field": "basis", "type": "nominal", "title": "Basis"}
+      ]
+    }
+  }
+}

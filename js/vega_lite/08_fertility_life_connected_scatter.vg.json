@@ -1,0 +1,134 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Connected scatterplot: life expectancy at birth (women and men) against the total fertility rate at each Census year, 1921 to 2021.",
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "data/fertility_life.csv",
+    "format": {"type": "csv", "parse": {"year": "number", "tfr": "number", "le_female": "number", "le_male": "number"}}
+  },
+  "transform": [
+    {"fold": ["le_female", "le_male"], "as": ["sexKey", "lifeExpectancy"]},
+    {"calculate": "datum.sexKey == 'le_female' ? 'Women' : 'Men'", "as": "sex"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "lifeExpectancy",
+      "type": "quantitative",
+      "title": "Life expectancy at birth (years)",
+      "scale": {"domain": [56, 88], "nice": false},
+      "axis": {"values": [60, 65, 70, 75, 80, 85], "grid": true, "domain": false, "tickSize": 0}
+    },
+    "y": {
+      "field": "tfr",
+      "type": "quantitative",
+      "title": "Babies per woman",
+      "scale": {"domain": [1.5, 3.8], "nice": false},
+      "axis": {"values": [1.5, 2, 2.5, 3, 3.5], "domain": false, "tickSize": 0}
+    }
+  },
+  "layer": [
+    {
+      "data": {"values": [{"tfr": 2.1}]},
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "#6e7783", "strokeDash": [5, 4], "strokeWidth": 1.2},
+          "encoding": {"y": {"field": "tfr", "type": "quantitative"}, "x": null}
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "dy": -7,
+            "fontSize": 12,
+            "color": "#4a5563",
+            "text": "Replacement level: 2.1 babies per woman"
+          },
+          "encoding": {"y": {"field": "tfr", "type": "quantitative"}, "x": {"value": {"expr": "width - 4"}}}
+        }
+      ]
+    },
+    {
+      "mark": {"type": "line", "strokeWidth": 2, "opacity": 0.85},
+      "encoding": {
+        "color": {
+          "field": "sex",
+          "type": "nominal",
+          "scale": {"domain": ["Men", "Women"], "range": ["#2a78d6", "#d2553a"]},
+          "legend": null
+        },
+        "order": {"field": "year", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {"type": "circle", "size": 70, "stroke": "#fbf8f3", "strokeWidth": 1.5, "opacity": 1},
+      "encoding": {
+        "color": {
+          "field": "sex",
+          "type": "nominal",
+          "legend": null,
+          "scale": {"domain": ["Men", "Women"], "range": ["#2a78d6", "#d2553a"]}
+        },
+        "tooltip": [
+          {"field": "year", "type": "quantitative", "title": "Census year", "format": "d"},
+          {"field": "sex", "type": "nominal", "title": "Life expectancy of"},
+          {
+            "field": "lifeExpectancy",
+            "type": "quantitative",
+            "title": "Life expectancy (years)",
+            "format": ".1f"
+          },
+          {"field": "life_table_period", "type": "nominal", "title": "Life table period"},
+          {"field": "tfr", "type": "quantitative", "title": "Babies per woman", "format": ".2f"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.sex == 'Women' && indexof([1921, 1933, 1947, 1961, 1976, 2021], datum.year) >= 0"},
+        {
+          "lookup": "year",
+          "from": {
+            "data": {
+              "values": [
+                {"year": 1921, "note": "1921", "dx": 9, "dy": 0, "align": "left"},
+                {"year": 1933, "note": "1933 · Great Depression", "dx": 9, "dy": 0, "align": "left"},
+                {"year": 1947, "note": "1947", "dx": 9, "dy": 4, "align": "left"},
+                {"year": 1961, "note": "1961 · Baby boom peak: 3.55", "dx": 9, "dy": -4, "align": "left"},
+                {"year": 1976, "note": "1976 · Below replacement", "dx": 9, "dy": 0, "align": "left"},
+                {"year": 2021, "note": "2021", "dx": 0, "dy": 16, "align": "center"}
+              ]
+            },
+            "key": "year",
+            "fields": ["note", "dx", "dy", "align"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#1f2933",
+        "baseline": "middle",
+        "dx": {"expr": "datum.dx"},
+        "dy": {"expr": "datum.dy"},
+        "align": {"expr": "datum.align"}
+      },
+      "encoding": {"text": {"field": "note"}}
+    },
+    {
+      "transform": [{"filter": "datum.year == 1921"}],
+      "mark": {"type": "text", "fontSize": 13, "fontWeight": 700, "align": "right", "dx": -10, "baseline": "middle"},
+      "encoding": {
+        "text": {"field": "sex"},
+        "color": {
+          "field": "sex",
+          "type": "nominal",
+          "scale": {"domain": ["Men", "Women"], "range": ["#1d5fae", "#b13f27"]},
+          "legend": null
+        }
+      }
+    }
+  ],
+  "resolve": {"scale": {"color": "independent"}}
+}

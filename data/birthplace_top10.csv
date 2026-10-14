@@ -1,0 +1,191 @@
+year,country,population,rank
+1901,United Kingdom,495074,1
+1901,Ireland,184085,2
+1901,Germany,38352,3
+1901,China,29907,4
+1901,New Zealand,25788,5
+1901,Sweden & Norway,9863,6
+1901,Pacific Islands,9128,7
+1901,India,7637,8
+1901,United States,7448,9
+1901,Denmark,6281,10
+1911,United Kingdom,454268,1
+1911,Ireland,139434,2
+1911,Germany,32990,3
+1911,New Zealand,31868,4
+1911,China,20775,5
+1911,Italy,6719,6
+1911,India,6644,7
+1911,United States,6642,8
+1911,Denmark,5663,9
+1911,Sweden,5586,10
+1921,United Kingdom,571354,1
+1921,Ireland,105033,2
+1921,New Zealand,38611,3
+1921,Germany,22396,4
+1921,China,15224,5
+1921,Italy,8135,6
+1921,India,6918,7
+1921,United States,6604,8
+1921,Denmark,6002,9
+1921,South Africa,5408,10
+1933,United Kingdom,636182,1
+1933,Ireland,78652,2
+1933,New Zealand,45963,3
+1933,Italy,26756,4
+1933,Germany,16842,5
+1933,China,8579,6
+1933,Greece,8337,7
+1933,India,6774,8
+1933,South Africa,6179,9
+1933,United States,6066,10
+1947,United Kingdom,498097,1
+1947,Ireland,44813,2
+1947,New Zealand,43610,3
+1947,Italy,33632,4
+1947,Germany,14567,5
+1947,Greece,12291,6
+1947,India,8160,7
+1947,Poland,6573,8
+1947,China,6404,9
+1947,United States,6232,10
+1954,United Kingdom,626035,1
+1954,Italy,119897,2
+1954,Germany,65422,3
+1954,Poland,56594,4
+1954,Netherlands,52035,5
+1954,New Zealand,43350,6
+1954,Ireland,38170,7
+1954,Greece,25862,8
+1954,Yugoslavia (former),22856,9
+1954,Malta,19988,10
+1961,United Kingdom,718345,1
+1961,Italy,228296,2
+1961,Germany,109315,3
+1961,Netherlands,102083,4
+1961,Greece,77333,5
+1961,Poland,60049,6
+1961,Yugoslavia (former),49776,7
+1961,New Zealand,47011,8
+1961,Malta,39337,9
+1961,Ireland,37057,10
+1966,United Kingdom,870548,1
+1966,Italy,267325,2
+1966,Greece,140089,3
+1966,Germany,108709,4
+1966,Netherlands,99549,5
+1966,Yugoslavia (former),71277,6
+1966,Poland,61641,7
+1966,Malta,55104,8
+1966,New Zealand,52485,9
+1966,Ireland,38116,10
+1971,United Kingdom,1046356,1
+1971,Italy,289476,2
+1971,Greece,160200,3
+1971,Yugoslavia (former),129816,4
+1971,Germany,110811,5
+1971,Netherlands,99295,6
+1971,New Zealand,80466,7
+1971,Poland,59700,8
+1971,Malta,53681,9
+1971,Ireland,41854,10
+1976,United Kingdom,1044418,1
+1976,Italy,279470,2
+1976,Greece,152352,3
+1976,Yugoslavia (former),143102,4
+1976,Germany,106854,5
+1976,Netherlands,91548,6
+1976,New Zealand,83929,7
+1976,Ireland,66954,8
+1976,Poland,55912,9
+1976,Malta,55822,10
+1981,United Kingdom,1075754,1
+1981,Italy,274965,2
+1981,New Zealand,160746,3
+1981,Yugoslavia (former),148563,4
+1981,Greece,145840,5
+1981,Germany,109262,6
+1981,Netherlands,95101,7
+1981,Poland,58951,8
+1981,Malta,56787,9
+1981,Lebanon,49392,10
+1986,United Kingdom,1072049,1
+1986,Italy,260983,2
+1986,New Zealand,199905,3
+1986,Yugoslavia (former),149282,4
+1986,Greece,136887,5
+1986,Germany,113466,6
+1986,Netherlands,94404,7
+1986,Vietnam,82705,8
+1986,Poland,66922,9
+1986,Malta,56123,10
+1991,United Kingdom,1106474,1
+1991,New Zealand,264126,2
+1991,Italy,253417,3
+1991,Yugoslavia (former),160624,4
+1991,Greece,135883,5
+1991,Vietnam,121811,6
+1991,Germany,111950,7
+1991,Netherlands,94766,8
+1991,China,77882,9
+1991,Philippines,73007,10
+1996,United Kingdom,1072562,1
+1996,New Zealand,291388,2
+1996,Italy,238246,3
+1996,Vietnam,151053,4
+1996,Greece,126520,5
+1996,China,111009,6
+1996,Germany,110331,7
+1996,Philippines,92949,8
+1996,Netherlands,88028,9
+1996,India,77551,10
+2001,United Kingdom,1100940,1
+2001,New Zealand,389600,2
+2001,Italy,229850,3
+2001,Vietnam,163490,4
+2001,China,153360,5
+2001,Greece,128700,6
+2001,Germany,118340,7
+2001,Philippines,114260,8
+2001,India,98070,9
+2001,Netherlands,91900,10
+2006,United Kingdom,1108470,1
+2006,New Zealand,437890,2
+2006,China,251960,3
+2006,Italy,218040,4
+2006,Vietnam,178010,5
+2006,India,169720,6
+2006,Philippines,141890,7
+2006,Greece,128980,8
+2006,Germany,124710,9
+2006,South Africa,119490,10
+2011,United Kingdom,1166620,1
+2011,New Zealand,543950,2
+2011,China,387420,3
+2011,India,337120,4
+2011,Vietnam,207620,5
+2011,Italy,201680,6
+2011,Philippines,193030,7
+2011,South Africa,161590,8
+2011,Malaysia,134140,9
+2011,Germany,125750,10
+2016,United Kingdom,1173110,1
+2016,New Zealand,568170,2
+2016,China,557690,3
+2016,India,489410,4
+2016,Philippines,252690,5
+2016,Vietnam,243220,6
+2016,Italy,195760,7
+2016,South Africa,180480,8
+2016,Malaysia,152900,9
+2016,Sri Lanka,124500,10
+2021,United Kingdom,1133600,1
+2021,India,712040,2
+2021,China,584660,3
+2021,New Zealand,584010,4
+2021,Philippines,308240,5
+2021,Vietnam,274840,6
+2021,South Africa,202730,7
+2021,Malaysia,173990,8
+2021,Italy,167570,9
+2021,Sri Lanka,140110,10
