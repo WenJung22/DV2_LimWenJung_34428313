@@ -97,13 +97,13 @@ h1, h2, h3 {
   margin: 0 0 12px;
 }
 
-p { margin: 0 0 16px; max-width: 64ch; }
+p { margin: 0 0 16px; max-width: 54ch; }
 
 .lede {
   font-size: 21px;
   line-height: 1.55;
   color: var(--ink-2);
-  max-width: 60ch;
+  max-width: 52ch;
 }
 
 strong { font-weight: 700; }
@@ -116,6 +116,8 @@ strong { font-weight: 700; }
 .k-green { color: var(--green-text); font-weight: 700; }
 .k-brown { color: var(--brown-text); font-weight: 700; }
 .k-grey { color: var(--muted); font-weight: 700; }
+.k-navy { color: #1f3a5f; font-weight: 700; }
+.k-pink { color: #b0457f; font-weight: 700; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -219,7 +221,7 @@ figure { margin: 0; }
   line-height: 1.5;
   color: var(--ink-2);
   margin: 0 0 14px;
-  max-width: 70ch;
+  max-width: 53ch;
 }
 .vis { width: 100%; min-height: 120px; }
 .vis-tall { min-height: 480px; }

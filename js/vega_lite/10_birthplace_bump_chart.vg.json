@@ -60,7 +60,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["United Kingdom", "Ireland", "Italy", "Greece", "China", "India", "Other countries"],
-        "range": ["#2a78d6", "#5a8f2e", "#1a9e8a", "#a04c96", "#d2553a", "#e09f1f", "#cdc5b8"]
+        "range": ["#2a78d6", "#1f3a5f", "#a04c96", "#e48bbf", "#d2553a", "#e09f1f", "#cdc5b8"]
       },
       "legend": null
     },

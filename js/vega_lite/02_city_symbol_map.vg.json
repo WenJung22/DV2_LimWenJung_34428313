@@ -48,7 +48,7 @@
         "color": {
           "field": "type",
           "type": "nominal",
-          "scale": {"domain": ["Capital city", "Regional centre"], "range": ["#d2553a", "#1a9e8a"]},
+          "scale": {"domain": ["Capital city", "Regional centre"], "range": ["#d2553a", "#8a8f99"]},
           "legend": {"title": null, "orient": "bottom-left", "symbolOpacity": 0.8}
         },
         "order": {"field": "population", "sort": "descending"},
