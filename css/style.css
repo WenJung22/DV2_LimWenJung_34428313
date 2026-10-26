@@ -184,7 +184,7 @@ strong { font-weight: 700; }
 
 /* ---------- Chapters ---------- */
 .chapter {
-  padding: 80px 0 24px;
+  padding: 64px 0 0;
 }
 .chapter-head {
   margin-bottom: 40px;
@@ -205,6 +205,7 @@ strong { font-weight: 700; }
 }
 
 .block { margin-bottom: 64px; }
+.chapter > .block:last-child { margin-bottom: 8px; }
 
 /* ---------- Figures ---------- */
 figure { margin: 0; }
