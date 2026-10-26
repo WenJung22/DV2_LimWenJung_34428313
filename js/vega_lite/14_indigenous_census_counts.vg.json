@@ -38,7 +38,7 @@
         "cornerRadiusTopRight": 3
       },
       "encoding": {
-        "color": {"condition": {"test": "datum.year == 2021", "value": "#b8740a"}, "value": "#e8b65a"},
+        "color": {"condition": {"test": "datum.year == 2021", "value": "#b8740a"}, "value": "#c9c4bb"},
         "tooltip": [
           {"field": "year", "type": "ordinal", "title": "Census"},
           {"field": "census_count", "type": "quantitative", "title": "People counted", "format": ","}
