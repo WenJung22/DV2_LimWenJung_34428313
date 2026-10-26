@@ -160,6 +160,9 @@ strong { font-weight: 700; }
   max-width: 30ch;
 }
 .stat-arrow { color: var(--terracotta-text); }
+/* the arrow sits centred in the space between the 1911 and 2021 numbers */
+.stat-from { display: flex; align-items: center; }
+.stat-from .stat-arrow { flex: 1; text-align: center; margin-right: calc(-1 * var(--gutter)); }
 
 /* ---------- Chapter navigation ---------- */
 .toc {
@@ -383,6 +386,7 @@ figure { margin: 0; }
 
 /* ---------- Smaller screens: collapse columns ---------- */
 @media (max-width: 900px) {
+  .stat-from .stat-arrow { display: none; }
   #vis-heatmap { margin-top: 0; }
   :root { --gutter: 20px; }
   .c-8, .c-7, .c-6, .c-5, .c-4, .c-3 { grid-column: span 12; }
