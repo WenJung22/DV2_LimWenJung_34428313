@@ -18,7 +18,12 @@
       "format": {"type": "csv", "parse": {"persons": "number"}},
       "transform": [
         {"type": "joinaggregate", "ops": ["sum"], "fields": ["persons"], "as": ["total"]},
-        {"type": "formula", "expr": "datum.persons / datum.total * 100", "as": "share"}
+        {"type": "formula", "expr": "datum.persons / datum.total * 100", "as": "share"},
+        {
+          "type": "formula",
+          "expr": "{'Uniting Church': 'Uniting', 'Eastern Orthodox': 'Orthodox', 'Presbyterian & Reformed': 'Presbyterian', 'Christian (not further defined)': 'Christian', 'Secular & other spiritual beliefs': 'Secular', 'Other religions': 'Other'}[datum.religion] || datum.religion",
+          "as": "short"
+        }
       ]
     },
     {
@@ -80,15 +85,23 @@
           "baseline": {"value": "top"},
           "fill": {"value": "#ffffff"},
           "font": {"value": "Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif"},
-          "fontSize": {"value": 12.5},
-          "fontWeight": {"value": 700},
-          "lineHeight": {"value": 15}
+          "fontWeight": {"value": 700}
         },
         "update": {
-          "x": {"signal": "datum.x0 + 7"},
-          "y": {"signal": "datum.y0 + 7"},
+          "x": {
+            "signal": "datum.x0 + (((datum.x1 - datum.x0) > length(datum.short) * 6.7 + 14 && (datum.y1 - datum.y0) > 40) ? 7 : 5)"
+          },
+          "y": {
+            "signal": "datum.y0 + (((datum.x1 - datum.x0) > length(datum.short) * 6.7 + 14 && (datum.y1 - datum.y0) > 40) ? 7 : 5)"
+          },
           "text": {
-            "signal": "(datum.x1 - datum.x0) > length(datum.religion) * 6.3 + 12 && (datum.y1 - datum.y0) > 40 ? [datum.religion, format(datum.share, '.1f') + '%'] : (datum.x1 - datum.x0) > 40 && (datum.y1 - datum.y0) > 22 ? format(datum.share, '.0f') + '%' : ''"
+            "signal": "((datum.x1 - datum.x0) > length(datum.short) * 6.7 + 14 && (datum.y1 - datum.y0) > 40) || ((datum.x1 - datum.x0) > length(datum.short) * 5.9 + 12 && (datum.y1 - datum.y0) > 34) ? [datum.short, format(datum.share, '.1f') + '%'] : ''"
+          },
+          "fontSize": {
+            "signal": "((datum.x1 - datum.x0) > length(datum.short) * 6.7 + 14 && (datum.y1 - datum.y0) > 40) ? 12.5 : 11"
+          },
+          "lineHeight": {
+            "signal": "((datum.x1 - datum.x0) > length(datum.short) * 6.7 + 14 && (datum.y1 - datum.y0) > 40) ? 15 : 13"
           }
         }
       }
