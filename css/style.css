@@ -226,6 +226,8 @@ figure { margin: 0; }
 }
 .vis { width: 100%; min-height: 120px; }
 .vis-tall { min-height: 480px; }
+/* heatmap: its legend sits to the right of the subtitle, so pull the chart up into that empty space */
+#vis-heatmap { margin-top: -128px; }
 
 .source {
   font-size: 13px;
@@ -381,6 +383,7 @@ figure { margin: 0; }
 
 /* ---------- Smaller screens: collapse columns ---------- */
 @media (max-width: 900px) {
+  #vis-heatmap { margin-top: 0; }
   :root { --gutter: 20px; }
   .c-8, .c-7, .c-6, .c-5, .c-4, .c-3 { grid-column: span 12; }
   .start-2 { grid-column-start: auto; }

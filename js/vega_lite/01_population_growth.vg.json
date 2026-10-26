@@ -41,12 +41,12 @@
         "values": [
           {"year": 1788, "ly": 6500000, "label": "1788 · First Fleet arrives at Sydney Cove", "align": "left"},
           {"year": 1851, "ly": 10500000, "label": "1851 · Gold rushes begin", "align": "left"},
-          {"year": 1901, "ly": 14500000, "label": "1901 · Federation: 3.8 million people", "align": "left"},
+          {"year": 1901, "ly": 14500000, "label": "1901 · Federation: 3.8 million people", "align": "right"},
           {
             "year": 1911,
             "ly": 18500000,
             "label": "1911 · First national Census counts 4,455,005 people",
-            "align": "left"
+            "align": "right"
           },
           {"year": 1945, "ly": 22500000, "label": "1945 · Post-war migration program begins", "align": "left"},
           {

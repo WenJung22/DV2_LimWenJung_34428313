@@ -3,6 +3,7 @@
   "description": "Heatmap of annual population growth (%) for each state and territory, years ending 30 June 1902 to 2021. A diverging colour scale separates growth (teal) from decline (brown).",
   "width": "container",
   "height": 236,
+  "padding": {"top": 86, "right": 6, "bottom": 6, "left": 6},
   "data": {
     "url": "data/state_growth.csv",
     "format": {"type": "csv", "parse": {"year": "number", "growth_pct": "number"}}
@@ -49,18 +50,164 @@
           },
           "legend": {
             "title": "Annual growth",
-            "orient": "top",
+            "orient": "none",
             "direction": "horizontal",
             "gradientLength": 320,
             "gradientThickness": 12,
             "labelOverlap": false,
-            "labelExpr": "isValid(datum.label) && datum.label != '' ? datum.label + '%' : ''"
+            "labelExpr": "isValid(datum.label) && datum.label != '' ? datum.label + '%' : ''",
+            "legendX": {"expr": "width - 330"},
+            "legendY": -80
           }
         },
         "tooltip": [
           {"field": "state", "type": "nominal", "title": "State/territory"},
           {"field": "year", "type": "ordinal", "title": "Year ending 30 June"},
           {"field": "growth_pct", "type": "quantitative", "title": "Growth (%)", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "state": "ACT",
+            "year": 1902,
+            "reason": "The ACT was created in 1911; its population is recorded from 1912"
+          },
+          {
+            "state": "ACT",
+            "year": 1903,
+            "reason": "The ACT was created in 1911; its population is recorded from 1912"
+          },
+          {
+            "state": "ACT",
+            "year": 1904,
+            "reason": "The ACT was created in 1911; its population is recorded from 1912"
+          },
+          {
+            "state": "ACT",
+            "year": 1905,
+            "reason": "The ACT was created in 1911; its population is recorded from 1912"
+          },
+          {
+            "state": "ACT",
+            "year": 1906,
+            "reason": "The ACT was created in 1911; its population is recorded from 1912"
+          },
+          {
+            "state": "ACT",
+            "year": 1907,
+            "reason": "The ACT was created in 1911; its population is recorded from 1912"
+          },
+          {
+            "state": "ACT",
+            "year": 1908,
+            "reason": "The ACT was created in 1911; its population is recorded from 1912"
+          },
+          {
+            "state": "ACT",
+            "year": 1909,
+            "reason": "The ACT was created in 1911; its population is recorded from 1912"
+          },
+          {
+            "state": "ACT",
+            "year": 1910,
+            "reason": "The ACT was created in 1911; its population is recorded from 1912"
+          },
+          {
+            "state": "ACT",
+            "year": 1911,
+            "reason": "The ACT was created in 1911; its population is recorded from 1912"
+          },
+          {
+            "state": "NSW",
+            "year": 1961,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "Vic",
+            "year": 1961,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "Qld",
+            "year": 1961,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "SA",
+            "year": 1961,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "WA",
+            "year": 1961,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "Tas",
+            "year": 1961,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "NT",
+            "year": 1961,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "ACT",
+            "year": 1961,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "NSW",
+            "year": 1971,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "Vic",
+            "year": 1971,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "Qld",
+            "year": 1971,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "SA",
+            "year": 1971,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "WA",
+            "year": 1971,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "Tas",
+            "year": 1971,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "NT",
+            "year": 1971,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          },
+          {
+            "state": "ACT",
+            "year": 1971,
+            "reason": "Not published by the ABS: the population series changes basis this year"
+          }
+        ]
+      },
+      "mark": {"type": "rect", "fill": "#d9d4ca", "stroke": "#fbf8f3", "strokeWidth": 0.6},
+      "encoding": {
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State/territory"},
+          {"field": "year", "type": "ordinal", "title": "Year ending 30 June"},
+          {"field": "reason", "type": "nominal", "title": "No data"}
         ]
       }
     },
@@ -88,6 +235,21 @@
         "values": [{"year": 1916, "state": "NSW"}, {"year": 1950, "state": "NSW"}, {"year": 2021, "state": "NSW"}]
       },
       "mark": {"type": "text", "dy": -9, "fontSize": 11, "color": "#1f2933", "text": "▼"}
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {"type": "rect", "fill": "#d9d4ca", "stroke": "#b9b2a6", "strokeWidth": 0.5},
+      "encoding": {
+        "x": {"value": {"expr": "width - 90"}},
+        "x2": {"value": {"expr": "width - 75"}},
+        "y": {"value": -62},
+        "y2": {"value": -50}
+      }
+    },
+    {
+      "data": {"values": [{"label": "No data"}]},
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "fontSize": 12, "color": "#4a5563"},
+      "encoding": {"x": {"value": {"expr": "width - 69"}}, "y": {"value": -56}, "text": {"field": "label"}}
     }
   ]
 }
